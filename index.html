@@ -1,0 +1,542 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TradePass — Pass your EPA 608 the first time</title>
+<meta name="description" content="Bilingual EPA 608 exam prep for HVAC techs. Practice tests with explanations that make sense — English y español. $19.99 once, no subscription.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@500&display=swap" rel="stylesheet">
+<!-- GA4: uncomment and replace G-XXXXXXXXXX with your Measurement ID before running ads
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date()); gtag('config', 'G-XXXXXXXXXX');
+</script>
+Note: no SRI hash on gtag/fonts — Google serves dynamically-generated, per-user content there, so integrity hashes would break loading.
+-->
+<style>
+  :root{
+    --graphite:#22272B; --ink:#1B1F22; --steel:#5B6770; --steel-border:#D7DDE1;
+    --yellow:#F5B700; --blue:#2E5EAA; --red:#C0392B; --green:#2F7D4F;
+    --paper:#F6F7F5; --card:#FFFFFF;
+    --display:"Barlow Condensed",sans-serif; --body:"IBM Plex Sans",sans-serif; --mono:"IBM Plex Mono",monospace;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion: reduce){ html{scroll-behavior:auto} }
+  body{font-family:var(--body);color:var(--ink);background:var(--paper);line-height:1.55;font-size:16px}
+  img,svg{display:block;max-width:100%}
+  a{color:var(--blue)}
+  :focus-visible{outline:3px solid var(--blue);outline-offset:2px;border-radius:4px}
+  .wrap{max-width:1060px;margin:0 auto;padding:0 20px}
+  .eyebrow{font-family:var(--body);font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--steel)}
+  .mono{font-family:var(--mono);font-weight:500}
+
+  /* top bar */
+  .topbar{background:var(--graphite);color:#fff}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:56px}
+  .wordmark{font-family:var(--display);font-weight:700;font-size:22px;letter-spacing:.04em;color:#fff;text-decoration:none}
+  .wordmark b{color:var(--yellow)}
+  .lang{display:flex;gap:0;border:1px solid rgba(255,255,255,.25);border-radius:6px;overflow:hidden}
+  .lang button{font-family:var(--mono);font-size:13px;padding:7px 12px;background:transparent;color:#fff;border:0;cursor:pointer;min-height:36px}
+  .lang button[aria-pressed="true"]{background:var(--yellow);color:var(--ink)}
+
+  /* hero */
+  .hero{background:var(--graphite);color:#fff;padding:56px 0 64px}
+  .hero .wrap{display:grid;grid-template-columns:1.15fr .85fr;gap:48px;align-items:center}
+  .hero .eyebrow{color:var(--yellow)}
+  h1{font-family:var(--display);font-weight:700;font-size:clamp(40px,6vw,64px);line-height:1.02;margin:14px 0 18px;text-wrap:balance}
+  .hero p.sub{color:rgba(255,255,255,.82);font-size:18px;max-width:46ch}
+  .cta-row{margin-top:28px;display:flex;flex-wrap:wrap;align-items:center;gap:16px}
+  .btn{display:inline-block;font-family:var(--body);font-weight:600;font-size:17px;border:0;border-radius:10px;cursor:pointer;text-align:center;min-height:56px;padding:16px 28px}
+  .btn-primary{background:var(--yellow);color:var(--ink)}
+  .btn-primary:hover{filter:brightness(1.06)}
+  .microcopy{font-family:var(--mono);font-size:13px;color:rgba(255,255,255,.6)}
+
+  /* gauge */
+  .gauge-box{text-align:center}
+  .gauge-needle{transform-origin:130px 130px;transform:rotate(-90deg);transition:transform 1.1s cubic-bezier(.2,.7,.2,1)}
+  @media (prefers-reduced-motion: reduce){ .gauge-needle{transition:none} }
+  .gauge-caption{margin-top:10px;font-family:var(--mono);font-size:14px;color:rgba(255,255,255,.75)}
+  .gauge-caption b{color:var(--yellow);font-weight:500}
+
+  /* hazard stripe */
+  .stripe{height:8px;background:repeating-linear-gradient(-45deg,var(--yellow) 0 14px,var(--graphite) 14px 28px)}
+
+  /* stats strip */
+  .stats{background:var(--card);border-bottom:1px solid var(--steel-border)}
+  .stats .wrap{display:grid;grid-template-columns:repeat(4,auto);justify-content:space-between;gap:12px 28px;padding:18px 20px}
+  .stat{font-family:var(--mono);font-size:14px;color:var(--steel)}
+  .stat b{color:var(--ink);font-weight:500}
+
+  /* sections */
+  section{padding:64px 0}
+  h2{font-family:var(--display);font-weight:700;font-size:clamp(30px,4vw,42px);line-height:1.05;margin:10px 0 8px;text-wrap:balance}
+  .section-sub{color:var(--steel);max-width:56ch}
+
+  /* sample questions */
+  .samples{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .q-card{background:var(--card);border:1px solid var(--steel-border);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:12px}
+  .q-tag{align-self:flex-start;font-family:var(--mono);font-size:12px;background:var(--paper);border:1px solid var(--steel-border);border-radius:6px;padding:3px 8px;color:var(--steel)}
+  .q-text{font-family:var(--display);font-weight:600;font-size:20px;line-height:1.15}
+  .choices{display:flex;flex-direction:column;gap:8px}
+  .choice{display:flex;gap:10px;align-items:flex-start;text-align:left;font-family:var(--body);font-size:15px;background:var(--paper);border:1.5px solid var(--steel-border);border-radius:8px;padding:11px 12px;cursor:pointer;min-height:48px;width:100%}
+  .choice .letter{font-family:var(--mono);font-size:13px;color:var(--steel);border:1px solid var(--steel-border);border-radius:5px;padding:1px 7px;flex:none;margin-top:1px}
+  .choice:hover{border-color:var(--blue)}
+  .choice.correct{border-color:var(--green);background:#eef6f0}
+  .choice.correct .letter{color:var(--green);border-color:var(--green)}
+  .choice.wrong{border-color:var(--red);background:#faeeec}
+  .choice.wrong .letter{color:var(--red);border-color:var(--red)}
+  .choice[disabled]{cursor:default}
+  .why{display:none;border-left:3px solid var(--green);background:var(--paper);border-radius:0 8px 8px 0;padding:10px 12px;font-size:14px;color:var(--ink)}
+  .why.show{display:block}
+  .why .why-label{font-family:var(--body);font-weight:600;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--green);display:block;margin-bottom:4px}
+
+  /* difference cards */
+  .diff{background:var(--card);border-top:1px solid var(--steel-border);border-bottom:1px solid var(--steel-border)}
+  .diff-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:32px}
+  .diff-card{border:1px solid var(--steel-border);border-radius:10px;padding:22px;background:var(--paper)}
+  .diff-card .code{font-family:var(--mono);font-size:13px;color:var(--ink);background:var(--yellow);border-radius:6px;padding:3px 9px;display:inline-block;margin-bottom:14px}
+  .diff-card h3{font-family:var(--display);font-weight:600;font-size:22px;margin-bottom:6px}
+  .diff-card p{font-size:15px;color:var(--steel)}
+
+  /* guarantee */
+  .guarantee{background:var(--graphite);color:#fff;text-align:center}
+  .guarantee h2{color:#fff}
+  .guarantee p{color:rgba(255,255,255,.75);max-width:52ch;margin:8px auto 0}
+
+  /* pricing */
+  .price-card{max-width:460px;margin:32px auto 0;background:var(--card);border:1px solid var(--steel-border);border-radius:12px;overflow:hidden}
+  .price-head{background:var(--yellow);color:var(--ink);padding:22px;text-align:center}
+  .price-head .price{font-family:var(--mono);font-size:34px}
+  .price-head .per{font-size:14px;font-weight:600}
+  .price-body{padding:24px}
+  .price-body ul{list-style:none;display:flex;flex-direction:column;gap:10px;margin-bottom:22px}
+  .price-body li{padding-left:26px;position:relative;font-size:15px}
+  .price-body li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:600}
+  .btn-block{width:100%}
+
+  /* FAQ */
+  .faq details{background:var(--card);border:1px solid var(--steel-border);border-radius:10px;padding:16px 20px;margin-top:12px}
+  .faq summary{font-weight:600;cursor:pointer;min-height:32px}
+  .faq details p{margin-top:10px;color:var(--steel);font-size:15px}
+
+  /* footer */
+  footer{background:var(--graphite);color:rgba(255,255,255,.65);padding:36px 0;font-size:13px}
+  footer .wrap{display:flex;flex-direction:column;gap:8px}
+
+  /* modal */
+  dialog{border:0;border-radius:12px;padding:0;max-width:420px;width:calc(100% - 40px)}
+  dialog::backdrop{background:rgba(27,31,34,.6)}
+  .modal-inner{padding:28px}
+  .modal-inner h3{font-family:var(--display);font-weight:700;font-size:26px;margin-bottom:8px}
+  .modal-inner p{color:var(--steel);font-size:15px;margin-bottom:18px}
+  .modal-inner form{display:flex;flex-direction:column;gap:12px}
+  .modal-inner input[type=email]{font-family:var(--body);font-size:16px;padding:14px;border:1.5px solid var(--steel-border);border-radius:8px;min-height:52px}
+  .modal-inner input[type=email]:focus{border-color:var(--blue);outline:none}
+  .modal-close{position:absolute;top:10px;right:10px;background:none;border:0;font-size:22px;cursor:pointer;color:var(--steel);width:44px;height:44px}
+  .modal-success{display:none;color:var(--green);font-weight:600}
+
+  @media (max-width:820px){
+    .hero .wrap{grid-template-columns:1fr;gap:36px}
+    .gauge-box svg{max-width:280px;margin:0 auto}
+    .samples,.diff-grid{grid-template-columns:1fr}
+    .stats .wrap{grid-template-columns:1fr 1fr}
+  }
+</style>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="wrap">
+    <a class="wordmark" href="#">TRADE<b>PASS</b></a>
+    <div class="lang" role="group" aria-label="Language">
+      <button type="button" id="lang-en" aria-pressed="true" onclick="setLang('en')">EN</button>
+      <button type="button" id="lang-es" aria-pressed="false" onclick="setLang('es')">ES</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow" data-i18n="heroEyebrow">EPA Section 608 · HVAC certification</span>
+      <h1 data-i18n="heroTitle">Pass your EPA&nbsp;608 the first time.</h1>
+      <p class="sub" data-i18n="heroSub">Practice tests that feel like the real exam — with explanations that actually make sense. Fully bilingual, English y español. Works offline in the field.</p>
+      <div class="cta-row">
+        <button class="btn btn-primary" data-i18n="ctaBuy" onclick="openBuyModal('hero')">Get TradePass — $19.99</button>
+        <span class="microcopy" data-i18n="ctaMicro">one-time purchase · no subscription</span>
+      </div>
+    </div>
+    <div class="gauge-box">
+      <svg viewBox="0 0 260 160" width="340" role="img" aria-label="Gauge showing the 72% score needed to pass">
+        <!-- track -->
+        <path d="M 26 130 A 104 104 0 0 1 234 130" fill="none" stroke="rgba(255,255,255,.18)" stroke-width="14" stroke-linecap="round"/>
+        <!-- pass zone: 72%..100% of 180deg -->
+        <path id="passArc" d="" fill="none" stroke="var(--yellow)" stroke-width="14" stroke-linecap="round"/>
+        <!-- ticks -->
+        <g id="ticks" stroke="rgba(255,255,255,.45)" stroke-width="2"></g>
+        <!-- needle -->
+        <g class="gauge-needle" id="needle">
+          <line x1="130" y1="130" x2="130" y2="44" stroke="#fff" stroke-width="4" stroke-linecap="round"/>
+        </g>
+        <circle cx="130" cy="130" r="9" fill="var(--yellow)"/>
+        <text x="130" y="156" text-anchor="middle" font-family="IBM Plex Mono,monospace" font-size="15" fill="#fff" id="gaugeReadout">72%</text>
+      </svg>
+      <p class="gauge-caption" data-i18n-html="gaugeCaption"><b>72%</b> to pass — we train you past the line.</p>
+    </div>
+  </div>
+</section>
+
+<div class="stripe" aria-hidden="true"></div>
+
+<div class="stats">
+  <div class="wrap">
+    <span class="stat"><b>500+</b> <span data-i18n="statQuestions">questions at launch</span></span>
+    <span class="stat"><b>4</b> <span data-i18n="statSections">exam sections covered</span></span>
+    <span class="stat"><b>EN+ES</b> <span data-i18n="statLang">every single question</span></span>
+    <span class="stat"><b>100%</b> <span data-i18n="statOffline">works offline</span></span>
+  </div>
+</div>
+
+<section id="try">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="tryEyebrow">Try it</span>
+    <h2 data-i18n="tryTitle">Three real-style questions. No signup.</h2>
+    <p class="section-sub" data-i18n="trySub">Tap an answer. This is exactly how the app teaches: instant feedback, then the why.</p>
+    <div class="samples" id="samples"></div>
+  </div>
+</section>
+
+<section class="diff">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="diffEyebrow">Why TradePass</span>
+    <h2 data-i18n="diffTitle">Built for techs, not test companies.</h2>
+    <div class="diff-grid">
+      <div class="diff-card">
+        <span class="code">WHY</span>
+        <h3 data-i18n="diff1Title">Explanations, not answer keys</h3>
+        <p data-i18n="diff1Body">Every question tells you why the right answer is right — in plain language, the way a good instructor would.</p>
+      </div>
+      <div class="diff-card">
+        <span class="code">ES</span>
+        <h3 data-i18n="diff2Title">Real Spanish</h3>
+        <p data-i18n="diff2Body">Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.</p>
+      </div>
+      <div class="diff-card">
+        <span class="code">OFF</span>
+        <h3 data-i18n="diff3Title">Made for the jobsite</h3>
+        <p data-i18n="diff3Body">Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="guarantee">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--yellow)" data-i18n="guaranteeEyebrow">The deal</span>
+    <h2 data-i18n="guaranteeTitle">Pass your exam or get your money back.</h2>
+    <p data-i18n="guaranteeBody">Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.</p>
+  </div>
+</section>
+
+<section id="pricing">
+  <div class="wrap">
+    <span class="eyebrow" data-i18n="priceEyebrow">Pricing</span>
+    <h2 data-i18n="priceTitle">Pay once. Keep it forever.</h2>
+    <div class="price-card">
+      <div class="price-head">
+        <div class="price">$19.99</div>
+        <div class="per" data-i18n="priceOnce">one-time · no subscription</div>
+      </div>
+      <div class="price-body">
+        <ul>
+          <li data-i18n="feat1">500+ questions: Core, Type I, II & III</li>
+          <li data-i18n="feat2">Unlimited exam simulations</li>
+          <li data-i18n="feat3">Weak-area drills that adapt to you</li>
+          <li data-i18n="feat4">Full English + Spanish</li>
+          <li data-i18n="feat5">Works offline · free updates</li>
+        </ul>
+        <button class="btn btn-primary btn-block" data-i18n="ctaBuy2" onclick="openBuyModal('pricing')">Get TradePass — $19.99</button>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="faq">
+  <div class="wrap">
+    <span class="eyebrow">FAQ</span>
+    <h2 data-i18n="faqTitle">Straight answers</h2>
+    <details>
+      <summary data-i18n="faq1Q">Is this the official EPA exam?</summary>
+      <p data-i18n="faq1A">No. TradePass is independent study material. You take the real proctored exam with an EPA-approved provider — we get you ready to pass it the first time.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq2Q">Which certification types does it cover?</summary>
+      <p data-i18n="faq2A">Core plus Type I (small appliances), Type II (high pressure) and Type III (low pressure) — everything you need for Universal.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq3Q">When does it launch?</summary>
+      <p data-i18n="faq3A">Soon. Leave your email and you'll get 30% off the launch price — no spam, one email when it's live.</p>
+    </details>
+    <details>
+      <summary data-i18n="faq4Q">Does the whole app really work in Spanish?</summary>
+      <p data-i18n="faq4A">Yes — every question, every explanation, every screen. Written by people, not auto-translated.</p>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wordmark" style="font-size:18px">TRADE<b>PASS</b></span>
+    <span data-i18n="footerDisclaimer">TradePass is independent study material and is not affiliated with or endorsed by the U.S. EPA or any exam provider.</span>
+    <span class="mono">© 2026 TradePass</span>
+  </div>
+</footer>
+
+<dialog id="buyModal" aria-labelledby="modalTitle">
+  <div class="modal-inner">
+    <button class="modal-close" onclick="document.getElementById('buyModal').close()" aria-label="Close">×</button>
+    <h3 id="modalTitle" data-i18n="modalTitle">Almost ready.</h3>
+    <p data-i18n="modalBody">TradePass launches soon. Leave your email and lock in 30% off the launch price — one email when it's live, nothing else.</p>
+    <!-- Replace YOUR_FORM_ID with a real Formspree (or Tally/Mailerlite) endpoint before running ads -->
+    <form id="waitlistForm" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+      <input type="email" name="email" required data-i18n-placeholder="modalEmail" placeholder="you@email.com" aria-label="Email">
+      <input type="hidden" name="lang" id="langField" value="en">
+      <input type="hidden" name="source" id="sourceField" value="">
+      <input type="hidden" name="utm" id="utmField" value="">
+      <button class="btn btn-primary btn-block" type="submit" data-i18n="modalCta">Lock in 30% off</button>
+      <span class="modal-success" id="modalSuccess" data-i18n="modalSuccess">You're on the list. Watch your inbox.</span>
+    </form>
+  </div>
+</dialog>
+
+<script>
+/* ---------- i18n ---------- */
+const I18N = {
+  en: {
+    heroEyebrow:"EPA Section 608 · HVAC certification",
+    heroTitle:"Pass your EPA 608 the first time.",
+    heroSub:"Practice tests that feel like the real exam — with explanations that actually make sense. Fully bilingual, English y español. Works offline in the field.",
+    ctaBuy:"Get TradePass — $19.99", ctaBuy2:"Get TradePass — $19.99",
+    ctaMicro:"one-time purchase · no subscription",
+    gaugeCaption:"<b>72%</b> to pass — we train you past the line.",
+    statQuestions:"questions at launch", statSections:"exam sections covered", statLang:"every single question", statOffline:"works offline",
+    tryEyebrow:"Try it", tryTitle:"Three real-style questions. No signup.",
+    trySub:"Tap an answer. This is exactly how the app teaches: instant feedback, then the why.",
+    diffEyebrow:"Why TradePass", diffTitle:"Built for techs, not test companies.",
+    diff1Title:"Explanations, not answer keys",
+    diff1Body:"Every question tells you why the right answer is right — in plain language, the way a good instructor would.",
+    diff2Title:"Real Spanish",
+    diff2Body:"Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.",
+    diff3Title:"Made for the jobsite",
+    diff3Body:"Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.",
+    guaranteeEyebrow:"The deal", guaranteeTitle:"Pass your exam or get your money back.",
+    guaranteeBody:"Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.",
+    priceEyebrow:"Pricing", priceTitle:"Pay once. Keep it forever.", priceOnce:"one-time · no subscription",
+    feat1:"500+ questions: Core, Type I, II & III", feat2:"Unlimited exam simulations",
+    feat3:"Weak-area drills that adapt to you", feat4:"Full English + Spanish", feat5:"Works offline · free updates",
+    faqTitle:"Straight answers",
+    faq1Q:"Is this the official EPA exam?",
+    faq1A:"No. TradePass is independent study material. You take the real proctored exam with an EPA-approved provider — we get you ready to pass it the first time.",
+    faq2Q:"Which certification types does it cover?",
+    faq2A:"Core plus Type I (small appliances), Type II (high pressure) and Type III (low pressure) — everything you need for Universal.",
+    faq3Q:"When does it launch?",
+    faq3A:"Soon. Leave your email and you'll get 30% off the launch price — no spam, one email when it's live.",
+    faq4Q:"Does the whole app really work in Spanish?",
+    faq4A:"Yes — every question, every explanation, every screen. Written by people, not auto-translated.",
+    footerDisclaimer:"TradePass is independent study material and is not affiliated with or endorsed by the U.S. EPA or any exam provider.",
+    modalTitle:"Almost ready.",
+    modalBody:"TradePass launches soon. Leave your email and lock in 30% off the launch price — one email when it's live, nothing else.",
+    modalEmail:"you@email.com", modalCta:"Lock in 30% off", modalSuccess:"You're on the list. Watch your inbox.",
+    whyLabel:"Why", correct:"Correct", incorrect:"Not quite"
+  },
+  es: {
+    heroEyebrow:"EPA Sección 608 · Certificación HVAC",
+    heroTitle:"Aprueba tu EPA 608 a la primera.",
+    heroSub:"Exámenes de práctica que se sienten como el examen real — con explicaciones que de verdad se entienden. Totalmente bilingüe, español e inglés. Funciona sin internet en la obra.",
+    ctaBuy:"Consigue TradePass — $19.99", ctaBuy2:"Consigue TradePass — $19.99",
+    ctaMicro:"pago único · sin suscripción",
+    gaugeCaption:"<b>72%</b> para aprobar — te entrenamos para superar la línea.",
+    statQuestions:"preguntas al lanzamiento", statSections:"secciones del examen", statLang:"cada pregunta en ambos idiomas", statOffline:"funciona sin internet",
+    tryEyebrow:"Pruébalo", tryTitle:"Tres preguntas de práctica. Sin registrarte.",
+    trySub:"Toca una respuesta. Así enseña la app: respuesta inmediata y luego el porqué.",
+    diffEyebrow:"Por qué TradePass", diffTitle:"Hecha para técnicos, no para empresas de exámenes.",
+    diff1Title:"Explicaciones, no solo respuestas",
+    diff1Body:"Cada pregunta te dice por qué la respuesta correcta es correcta — en lenguaje claro, como un buen instructor.",
+    diff2Title:"Español de verdad",
+    diff2Body:"Cada pregunta escrita en ambos idiomas por personas, no traducción automática. Cambia de idioma cuando quieras.",
+    diff3Title:"Hecha para la obra",
+    diff3Body:"Funciona 100% sin internet. Sesiones de 10 minutos que atacan tus áreas débiles. Estudia en la troca o en el descanso.",
+    guaranteeEyebrow:"El trato", guaranteeTitle:"Apruebas tu examen o te devolvemos tu dinero.",
+    guaranteeBody:"Termina el programa, presenta tu EPA 608, y si no apruebas, te reembolsamos. Así de simple.",
+    priceEyebrow:"Precio", priceTitle:"Pagas una vez. Es tuyo para siempre.", priceOnce:"pago único · sin suscripción",
+    feat1:"Más de 500 preguntas: Core, Tipo I, II y III", feat2:"Simulacros de examen ilimitados",
+    feat3:"Repasos que se adaptan a tus áreas débiles", feat4:"Inglés y español completos", feat5:"Sin internet · actualizaciones gratis",
+    faqTitle:"Respuestas directas",
+    faq1Q:"¿Este es el examen oficial de la EPA?",
+    faq1A:"No. TradePass es material de estudio independiente. El examen real lo presentas con un proveedor aprobado por la EPA — nosotros te preparamos para aprobarlo a la primera.",
+    faq2Q:"¿Qué tipos de certificación cubre?",
+    faq2A:"Core más Tipo I (electrodomésticos pequeños), Tipo II (alta presión) y Tipo III (baja presión) — todo lo que necesitas para la Universal.",
+    faq3Q:"¿Cuándo sale?",
+    faq3A:"Pronto. Deja tu correo y obtén 30% de descuento al lanzamiento — sin spam, un solo correo cuando esté lista.",
+    faq4Q:"¿De verdad toda la app funciona en español?",
+    faq4A:"Sí — cada pregunta, cada explicación, cada pantalla. Escrito por personas, no traducción automática.",
+    footerDisclaimer:"TradePass es material de estudio independiente y no está afiliado ni avalado por la EPA de EE. UU. ni por ningún proveedor de exámenes.",
+    modalTitle:"Ya casi está lista.",
+    modalBody:"TradePass sale pronto. Deja tu correo y asegura 30% de descuento al lanzamiento — un solo correo cuando esté lista, nada más.",
+    modalEmail:"tu@correo.com", modalCta:"Asegurar mi 30% de descuento", modalSuccess:"Estás en la lista. Revisa tu correo pronto.",
+    whyLabel:"Por qué", correct:"Correcto", incorrect:"No exactamente"
+  }
+};
+
+/* ---------- sample questions (from the real draft bank) ---------- */
+const SAMPLES = [
+  {
+    tag:{en:"CORE",es:"CORE"},
+    q:{en:"Which class of refrigerants has the HIGHEST ozone depletion potential?", es:"¿Qué clase de refrigerantes tiene el MAYOR potencial de agotamiento del ozono?"},
+    choices:[
+      {en:"HFCs (e.g., R-134a)", es:"HFC (p. ej., R-134a)"},
+      {en:"HCFCs (e.g., R-22)", es:"HCFC (p. ej., R-22)"},
+      {en:"CFCs (e.g., R-12)", es:"CFC (p. ej., R-12)"}
+    ],
+    answer:2,
+    why:{en:"CFCs are fully halogenated and very stable, so their chlorine reaches the stratosphere — highest ODP. HFCs contain no chlorine at all.",
+         es:"Los CFC están totalmente halogenados y son muy estables, así que su cloro llega a la estratosfera — el ODP más alto. Los HFC no contienen cloro."}
+  },
+  {
+    tag:{en:"CORE",es:"CORE"},
+    q:{en:"What colors identify a refrigerant recovery cylinder?", es:"¿Qué colores identifican un cilindro de recuperación de refrigerante?"},
+    choices:[
+      {en:"Solid white", es:"Blanco sólido"},
+      {en:"Gray body with a yellow top", es:"Cuerpo gris con la parte superior amarilla"},
+      {en:"Green body with a red top", es:"Cuerpo verde con la parte superior roja"}
+    ],
+    answer:1,
+    why:{en:"Recovery cylinders are gray with yellow tops so they're never confused with disposable charging cylinders. (Yes — that's where this page's colors come from.)",
+         es:"Los cilindros de recuperación son grises con la parte superior amarilla para no confundirlos con cilindros desechables. (Sí — de ahí vienen los colores de esta página.)"}
+  },
+  {
+    tag:{en:"TYPE II",es:"TIPO II"},
+    q:{en:"Which gas should you use to pressure-test a system for leaks after a repair?", es:"¿Qué gas debes usar para probar a presión un sistema después de una reparación?"},
+    choices:[
+      {en:"Compressed air", es:"Aire comprimido"},
+      {en:"Dry nitrogen", es:"Nitrógeno seco"},
+      {en:"Pure oxygen", es:"Oxígeno puro"}
+    ],
+    answer:1,
+    why:{en:"Dry nitrogen is inert and moisture-free. Air or oxygen mixed with refrigerant and oil can explode under pressure.",
+         es:"El nitrógeno seco es inerte y sin humedad. El aire o el oxígeno mezclados con refrigerante y aceite pueden explotar bajo presión."}
+  }
+];
+
+let lang = (localStorage.getItem("tp_lang") || (navigator.language||"en")).slice(0,2) === "es" ? "es" : "en";
+
+function setLang(l){
+  lang = l;
+  localStorage.setItem("tp_lang", l);
+  document.documentElement.lang = l;
+  document.getElementById("lang-en").setAttribute("aria-pressed", String(l==="en"));
+  document.getElementById("lang-es").setAttribute("aria-pressed", String(l==="es"));
+  document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (I18N[l][k]) el.textContent = I18N[l][k]; });
+  document.querySelectorAll("[data-i18n-html]").forEach(el => { const k = el.dataset.i18nHtml; if (I18N[l][k]) el.innerHTML = I18N[l][k]; });
+  document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { const k = el.dataset.i18nPlaceholder; if (I18N[l][k]) el.placeholder = I18N[l][k]; });
+  document.getElementById("langField").value = l;
+  renderSamples();
+}
+
+/* ---------- samples ---------- */
+function renderSamples(){
+  const root = document.getElementById("samples");
+  root.innerHTML = "";
+  const letters = ["A","B","C"];
+  SAMPLES.forEach((s, si) => {
+    const card = document.createElement("div"); card.className = "q-card";
+    card.innerHTML = `<span class="q-tag">${s.tag[lang]}</span><p class="q-text">${s.q[lang]}</p>`;
+    const box = document.createElement("div"); box.className = "choices";
+    const why = document.createElement("div"); why.className = "why";
+    why.innerHTML = `<span class="why-label"></span><span class="why-text"></span>`;
+    s.choices.forEach((c, ci) => {
+      const b = document.createElement("button");
+      b.className = "choice"; b.type = "button";
+      b.innerHTML = `<span class="letter">${letters[ci]}</span><span>${c[lang]}</span>`;
+      b.addEventListener("click", () => {
+        box.querySelectorAll(".choice").forEach((el, i) => {
+          el.disabled = true;
+          if (i === s.answer) el.classList.add("correct");
+        });
+        const ok = ci === s.answer;
+        if (!ok) b.classList.add("wrong");
+        why.style.borderLeftColor = ok ? "var(--green)" : "var(--red)";
+        why.querySelector(".why-label").textContent = `${ok ? I18N[lang].correct : I18N[lang].incorrect} — ${I18N[lang].whyLabel}`;
+        why.querySelector(".why-label").style.color = ok ? "var(--green)" : "var(--red)";
+        why.querySelector(".why-text").textContent = s.why[lang];
+        why.classList.add("show");
+        track("sample_answered", {question: si, correct: ok});
+      });
+      box.appendChild(b);
+    });
+    card.appendChild(box); card.appendChild(why); root.appendChild(card);
+  });
+}
+
+/* ---------- gauge ---------- */
+function polar(cx, cy, r, pct){ const a = Math.PI * (1 - pct); return [cx + r*Math.cos(a), cy - r*Math.sin(a)]; }
+(function initGauge(){
+  const [x1,y1] = polar(130,130,104,0.72), [x2,y2] = polar(130,130,104,1);
+  document.getElementById("passArc").setAttribute("d", `M ${x1} ${y1} A 104 104 0 0 1 ${x2} ${y2}`);
+  const ticks = document.getElementById("ticks");
+  for (let p = 0; p <= 10; p++){
+    const long = p % 5 === 0, r1 = 104 - 12, r2 = long ? r1 - 12 : r1 - 7;
+    const [ax,ay] = polar(130,130,r1,p/10), [bx,by] = polar(130,130,r2,p/10);
+    const t = document.createElementNS("http://www.w3.org/2000/svg","line");
+    t.setAttribute("x1",ax); t.setAttribute("y1",ay); t.setAttribute("x2",bx); t.setAttribute("y2",by);
+    if (long) t.setAttribute("stroke-width","3");
+    ticks.appendChild(t);
+  }
+  const sweep = () => { document.getElementById("needle").style.transform = `rotate(${-90 + 0.72*180}deg)`; };
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) sweep();
+  else setTimeout(sweep, 400);
+})();
+
+/* ---------- fake door + waitlist ---------- */
+const UTM = Object.fromEntries(["utm_source","utm_medium","utm_campaign"].map(k => [k, new URLSearchParams(location.search).get(k) || ""]));
+function track(event, props){
+  props = {...props, ...UTM, lang};
+  const log = JSON.parse(localStorage.getItem("tp_events") || "[]");
+  log.push({event, props, t: Date.now()});
+  localStorage.setItem("tp_events", JSON.stringify(log));
+  if (window.plausible) window.plausible(event, {props});     // hook up Plausible before running ads
+  if (window.gtag) window.gtag("event", event, props);        // or GA4
+}
+track("page_view", {});
+function openBuyModal(source){
+  track("buy_click", {source});
+  document.getElementById("sourceField").value = source;
+  document.getElementById("utmField").value = Object.values(UTM).filter(Boolean).join("/");
+  document.getElementById("buyModal").showModal();
+}
+document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
+  e.preventDefault();
+  const form = e.target;
+  track("waitlist_submit", {source: document.getElementById("sourceField").value});
+  try {
+    if (!form.action.includes("YOUR_FORM_ID")) {
+      await fetch(form.action, {method:"POST", body:new FormData(form), headers:{Accept:"application/json"}});
+    } else {
+      const emails = JSON.parse(localStorage.getItem("tp_waitlist") || "[]");
+      emails.push({email: form.email.value, lang, t: Date.now()});
+      localStorage.setItem("tp_waitlist", JSON.stringify(emails));
+    }
+    document.getElementById("modalSuccess").style.display = "block";
+    form.querySelector("button").disabled = true;
+  } catch { document.getElementById("modalSuccess").style.display = "block"; }
+});
+
+setLang(lang);
+</script>
+</body>
+</html>
