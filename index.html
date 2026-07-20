@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>TradePass — Pass your EPA 608 the first time</title>
-<meta name="description" content="Bilingual EPA 608 exam prep for HVAC techs. Practice tests with explanations that make sense — English y español. $19.99 once, no subscription.">
+<meta name="description" content="Bilingual EPA 608 exam prep for HVAC techs. Practice tests with clear explanations in English y español. Join the waitlist for 30% off at launch.">
 <link rel="icon" href="favicon.svg" type="image/svg+xml">
 <meta property="og:type" content="website">
 <meta property="og:title" content="TradePass — Pass your EPA 608 the first time">
@@ -144,6 +144,7 @@
   .modal-inner input[type=email]:focus{border-color:var(--blue);outline:none}
   .modal-close{position:absolute;top:10px;right:10px;background:none;border:0;font-size:22px;cursor:pointer;color:var(--steel);width:44px;height:44px}
   .modal-success{display:none;color:var(--green);font-weight:600}
+  .modal-error{display:none;color:var(--red);font-weight:600}
 
   @media (max-width:820px){
     .hero .wrap{grid-template-columns:1fr;gap:36px}
@@ -172,8 +173,8 @@
       <h1 data-i18n="heroTitle">Pass your EPA&nbsp;608 the first time.</h1>
       <p class="sub" data-i18n="heroSub">Practice tests that feel like the real exam — with explanations that actually make sense. Fully bilingual, English y español. Works offline in the field.</p>
       <div class="cta-row">
-        <button class="btn btn-primary" data-i18n="ctaBuy" onclick="openBuyModal('hero')">Get TradePass — $19.99</button>
-        <span class="microcopy" data-i18n="ctaMicro">one-time purchase · no subscription</span>
+        <button class="btn btn-primary" data-i18n="ctaBuy" onclick="openWaitlistModal('hero')">Join the waitlist — save 30%</button>
+        <span class="microcopy" data-i18n="ctaMicro">$19.99 launch price · one email when ready</span>
       </div>
     </div>
     <div class="gauge-box">
@@ -255,7 +256,7 @@
     <div class="price-card">
       <div class="price-head">
         <div class="price">$19.99</div>
-        <div class="per" data-i18n="priceOnce">one-time · no subscription</div>
+        <div class="per" data-i18n="priceOnce">launch price · one-time purchase</div>
       </div>
       <div class="price-body">
         <ul>
@@ -265,7 +266,7 @@
           <li data-i18n="feat4">Full English + Spanish</li>
           <li data-i18n="feat5">Works offline · free updates</li>
         </ul>
-        <button class="btn btn-primary btn-block" data-i18n="ctaBuy2" onclick="openBuyModal('pricing')">Get TradePass — $19.99</button>
+        <button class="btn btn-primary btn-block" data-i18n="ctaBuy2" onclick="openWaitlistModal('pricing')">Join the waitlist — save 30%</button>
       </div>
     </div>
   </div>
@@ -315,6 +316,7 @@
       <input type="hidden" name="utm" id="utmField" value="">
       <button class="btn btn-primary btn-block" type="submit" data-i18n="modalCta">Lock in 30% off</button>
       <span class="modal-success" id="modalSuccess" data-i18n="modalSuccess">You're on the list. Watch your inbox.</span>
+      <span class="modal-error" id="modalError" role="alert" data-i18n="modalError">We couldn't save your email. Please try again.</span>
     </form>
   </div>
 </dialog>
@@ -326,8 +328,8 @@ const I18N = {
     heroEyebrow:"EPA Section 608 · HVAC certification",
     heroTitle:"Pass your EPA 608 the first time.",
     heroSub:"Practice tests that feel like the real exam — with explanations that actually make sense. Fully bilingual, English y español. Works offline in the field.",
-    ctaBuy:"Get TradePass — $19.99", ctaBuy2:"Get TradePass — $19.99",
-    ctaMicro:"one-time purchase · no subscription",
+    ctaBuy:"Join the waitlist — save 30%", ctaBuy2:"Join the waitlist — save 30%",
+    ctaMicro:"$19.99 launch price · one email when ready",
     gaugeCaption:"<b>72%</b> to pass — we train you past the line.",
     statQuestions:"questions at launch", statSections:"exam sections covered", statLang:"every single question", statOffline:"works offline",
     tryEyebrow:"Try it", tryTitle:"Three real-style questions. No signup.",
@@ -341,7 +343,7 @@ const I18N = {
     diff3Body:"Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.",
     guaranteeEyebrow:"The deal", guaranteeTitle:"Pass your exam or get your money back.",
     guaranteeBody:"Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.",
-    priceEyebrow:"Pricing", priceTitle:"Pay once. Keep it forever.", priceOnce:"one-time · no subscription",
+    priceEyebrow:"Pricing", priceTitle:"Pay once. Keep it forever.", priceOnce:"launch price · one-time purchase",
     feat1:"500+ questions: Core, Type I, II & III", feat2:"Unlimited exam simulations",
     feat3:"Weak-area drills that adapt to you", feat4:"Full English + Spanish", feat5:"Works offline · free updates",
     faqTitle:"Straight answers",
@@ -357,14 +359,15 @@ const I18N = {
     modalTitle:"Almost ready.",
     modalBody:"TradePass launches soon. Leave your email and lock in 30% off the launch price — one email when it's live, nothing else.",
     modalEmail:"you@email.com", modalCta:"Lock in 30% off", modalSuccess:"You're on the list. Watch your inbox.",
+    modalError:"We couldn't save your email. Please try again.",
     whyLabel:"Why", correct:"Correct", incorrect:"Not quite"
   },
   es: {
     heroEyebrow:"EPA Sección 608 · Certificación HVAC",
     heroTitle:"Aprueba tu EPA 608 a la primera.",
     heroSub:"Exámenes de práctica que se sienten como el examen real — con explicaciones que de verdad se entienden. Totalmente bilingüe, español e inglés. Funciona sin internet en la obra.",
-    ctaBuy:"Consigue TradePass — $19.99", ctaBuy2:"Consigue TradePass — $19.99",
-    ctaMicro:"pago único · sin suscripción",
+    ctaBuy:"Únete a la lista — ahorra 30%", ctaBuy2:"Únete a la lista — ahorra 30%",
+    ctaMicro:"precio de lanzamiento $19.99 · un solo correo",
     gaugeCaption:"<b>72%</b> para aprobar — te entrenamos para superar la línea.",
     statQuestions:"preguntas al lanzamiento", statSections:"secciones del examen", statLang:"cada pregunta en ambos idiomas", statOffline:"funciona sin internet",
     tryEyebrow:"Pruébalo", tryTitle:"Tres preguntas de práctica. Sin registrarte.",
@@ -378,7 +381,7 @@ const I18N = {
     diff3Body:"Funciona 100% sin internet. Sesiones de 10 minutos que atacan tus áreas débiles. Estudia en la troca o en el descanso.",
     guaranteeEyebrow:"El trato", guaranteeTitle:"Apruebas tu examen o te devolvemos tu dinero.",
     guaranteeBody:"Termina el programa, presenta tu EPA 608, y si no apruebas, te reembolsamos. Así de simple.",
-    priceEyebrow:"Precio", priceTitle:"Pagas una vez. Es tuyo para siempre.", priceOnce:"pago único · sin suscripción",
+    priceEyebrow:"Precio", priceTitle:"Pagas una vez. Es tuyo para siempre.", priceOnce:"precio de lanzamiento · pago único",
     feat1:"Más de 500 preguntas: Core, Tipo I, II y III", feat2:"Simulacros de examen ilimitados",
     feat3:"Repasos que se adaptan a tus áreas débiles", feat4:"Inglés y español completos", feat5:"Sin internet · actualizaciones gratis",
     faqTitle:"Respuestas directas",
@@ -394,6 +397,7 @@ const I18N = {
     modalTitle:"Ya casi está lista.",
     modalBody:"TradePass sale pronto. Deja tu correo y asegura 30% de descuento al lanzamiento — un solo correo cuando esté lista, nada más.",
     modalEmail:"tu@correo.com", modalCta:"Asegurar mi 30% de descuento", modalSuccess:"Estás en la lista. Revisa tu correo pronto.",
+    modalError:"No pudimos guardar tu correo. Inténtalo de nuevo.",
     whyLabel:"Por qué", correct:"Correcto", incorrect:"No exactamente"
   }
 };
@@ -507,7 +511,7 @@ function polar(cx, cy, r, pct){ const a = Math.PI * (1 - pct); return [cx + r*Ma
   else setTimeout(sweep, 400);
 })();
 
-/* ---------- fake door + waitlist ---------- */
+/* ---------- waitlist funnel ---------- */
 const UTM = Object.fromEntries(["utm_source","utm_medium","utm_campaign"].map(k => [k, new URLSearchParams(location.search).get(k) || ""]));
 function track(event, props){
   props = {...props, ...UTM, lang};
@@ -517,9 +521,8 @@ function track(event, props){
   if (window.plausible) window.plausible(event, {props});     // hook up Plausible before running ads
   if (window.gtag) window.gtag("event", event, props);        // or GA4
 }
-track("page_view", {});
-function openBuyModal(source){
-  track("buy_click", {source});
+function openWaitlistModal(source){
+  track("waitlist_open", {source});
   document.getElementById("sourceField").value = source;
   document.getElementById("utmField").value = Object.values(UTM).filter(Boolean).join("/");
   document.getElementById("buyModal").showModal();
@@ -527,18 +530,28 @@ function openBuyModal(source){
 document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
   e.preventDefault();
   const form = e.target;
-  track("waitlist_submit", {source: document.getElementById("sourceField").value});
+  const submitButton = form.querySelector("button[type=submit]");
+  const successMessage = document.getElementById("modalSuccess");
+  const errorMessage = document.getElementById("modalError");
+  submitButton.disabled = true;
+  successMessage.style.display = "none";
+  errorMessage.style.display = "none";
   try {
     if (!form.action.includes("YOUR_FORM_ID")) {
-      await fetch(form.action, {method:"POST", body:new FormData(form), headers:{Accept:"application/json"}});
+      const response = await fetch(form.action, {method:"POST", body:new FormData(form), headers:{Accept:"application/json"}});
+      if (!response.ok) throw new Error("Waitlist submission failed");
     } else {
       const emails = JSON.parse(localStorage.getItem("tp_waitlist") || "[]");
       emails.push({email: form.email.value, lang, t: Date.now()});
       localStorage.setItem("tp_waitlist", JSON.stringify(emails));
     }
-    document.getElementById("modalSuccess").style.display = "block";
-    form.querySelector("button").disabled = true;
-  } catch { document.getElementById("modalSuccess").style.display = "block"; }
+    track("waitlist_submit", {source: document.getElementById("sourceField").value});
+    successMessage.style.display = "block";
+    form.querySelector("input[type=email]").disabled = true;
+  } catch {
+    errorMessage.style.display = "block";
+    submitButton.disabled = false;
+  }
 });
 
 setLang(lang);
