@@ -11,6 +11,7 @@
 <meta property="og:title" content="TradePass — Pass your EPA 608 the first time">
 <meta property="og:description" content="Take a free 10-question EPA 608 diagnostic in English or Spanish. Instant score, no signup.">
 <meta property="og:image" content="https://passthe608.com/og-v2.png">
+<link rel="preload" as="image" href="assets/hero_workbench.jpg" fetchpriority="high">
 <meta property="og:url" content="https://passthe608.com/">
 <meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -244,6 +245,80 @@
     .result-top{grid-template-columns:1fr}.result-panel h3{font-size:33px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.choice{transition:none}}
+
+  /* ============ v2 · editorial trade-catalog layer ============ */
+  /* hero photo backdrop + copy column */
+  .hero-photo-bg{position:absolute;inset:0;background:#1a1e22 url('assets/hero_workbench.jpg') center/cover no-repeat;opacity:.55;filter:grayscale(18%) brightness(.85);z-index:0}
+  .hero-photo-bg::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,var(--graphite) 0,rgba(32,37,42,.9) 42%,rgba(32,37,42,.5) 100%)}
+  .hero > .wrap{z-index:2}
+  .hero-copy{position:relative}
+  .hero-copy::before{content:"";position:absolute;inset:-14px -22px -14px -30px;background:linear-gradient(90deg,rgba(32,37,42,.85) 0,rgba(32,37,42,.72) 82%,rgba(32,37,42,0));border-radius:6px;z-index:-1;filter:blur(2px)}
+  .hero-numeral{position:absolute;top:6%;left:-12px;font-family:var(--display);font-weight:700;font-size:clamp(120px,17vw,220px);line-height:.85;color:rgba(245,183,0,.09);pointer-events:none;user-select:none;z-index:1}
+  .plate-badge{position:absolute;font-family:var(--mono);font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.55);text-transform:uppercase;z-index:3}
+  .plate-tl{top:18px;left:24px}.plate-tr{top:18px;right:24px}
+  .hero-fig-tag{position:absolute;left:24px;bottom:16px;font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:rgba(255,255,255,.42);z-index:3}
+
+  /* dashed section rules and paper */
+  .dashed-rule{position:relative;height:0;border:0;border-top:2px dashed var(--yellow);margin:0;background:transparent}
+  .dashed-rule-tag{position:relative;max-width:1160px;margin:0 auto;padding:0 24px}
+  .dashed-rule-tag span{position:absolute;top:-9px;left:24px;padding:0 12px;background:var(--paper);font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--steel);text-transform:uppercase}
+  .paper{background-color:#F7F3E9;background-image:radial-gradient(rgba(0,0,0,.045) 1px,transparent 1px);background-size:14px 14px}
+  .paper .diagnostic-shell{background:#FFFBF3}
+
+  /* stats become dashed figure-caption */
+  .stats{background:var(--paper);border-top:1px dashed var(--yellow);border-bottom:1px dashed var(--yellow)}
+  .stat{border-left:1px dashed var(--steel-border)!important}
+  .stat:last-child{border-right:1px dashed var(--steel-border)!important}
+  .stat b,.pass-plate strong{font-variant-numeric:tabular-nums}
+
+  /* method photo headers */
+  .method-step{padding:0!important;min-height:0}
+  .step-photo{position:relative;height:220px;background-size:cover;background-position:center;background-color:#0F1316}
+  .step-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(32,37,42,0) 30%,var(--graphite) 100%)}
+  .step-body{position:relative;padding:22px 26px 28px}
+  .method-step .step-no{display:inline-block;margin-top:0;position:relative}
+  .method-step h3{font-family:var(--display);font-size:29px;line-height:1;margin:12px 0 10px}
+  .method-step p{color:rgba(255,255,255,.72);font-size:15px}
+  .method-step::after{top:auto;right:22px;bottom:22px}
+
+  /* diff card photo squares */
+  .diff-card{padding:0!important}
+  .diff-card .card-photo{aspect-ratio:1;background-size:cover;background-position:center;background-color:#EFECE4;border-radius:var(--radius) var(--radius) 0 0;position:relative}
+  .diff-card .card-body{padding:22px 26px 28px}
+  .diff-card:first-child .card-photo{background-color:var(--yellow-soft)}
+
+  /* photographic guarantee seal replaces CSS ring */
+  .guarantee-seal.is-photo{border:0;box-shadow:none;transform:none;background:none}
+  .guarantee-seal.is-photo > *{display:none}
+  .guarantee-seal.is-photo::before{content:"";display:block;width:100%;aspect-ratio:1;background:url('assets/guarantee_seal.jpg') center/contain no-repeat;filter:drop-shadow(0 14px 26px rgba(0,0,0,.42))}
+
+  /* pricing product shot above features */
+  .price-product{width:100%;aspect-ratio:4/5;max-height:280px;background:#F1EEE8 url('assets/pricing_catalog.jpg') center/cover no-repeat;border-bottom:1px dashed var(--steel-border)}
+
+  /* slot-flip on quizCounter */
+  .slot{display:inline-block;overflow:hidden;vertical-align:baseline;line-height:1.2}
+  .slot .slot-cell{display:block;transition:transform .2s ease,opacity .18s ease}
+  .slot .slot-out{transform:translateY(-100%);opacity:0}
+  .slot .slot-in{transform:translateY(100%);opacity:0}
+  .slot .slot-in.on{transform:translateY(0);opacity:1}
+
+  /* scroll-in fade */
+  .scroll-in{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+  .scroll-in.on{opacity:1;transform:none}
+
+  /* leadNote: dotted cut line */
+  .form-note.cut::before{content:"✂ ";opacity:.6}
+
+  @media (max-width:760px){
+    .hero-numeral{top:2%;font-size:clamp(88px,26vw,140px)}
+    .hero-copy::before{inset:-8px -14px -8px -14px}
+    .step-photo{height:170px}
+  }
+  @media (prefers-reduced-motion:reduce){
+    .scroll-in{opacity:1;transform:none;transition:none}
+    .slot .slot-cell{transition:none}
+    .hero-photo-bg{filter:none}
+  }
 </style>
 </head>
 <body>
@@ -267,8 +342,12 @@
 </header>
 
 <section class="hero">
+  <div class="hero-photo-bg" aria-hidden="true"></div>
+  <span class="plate-badge plate-tl">PLATE 01 / 04</span>
+  <span class="plate-badge plate-tr">FIG. A · BASELINE VITALS</span>
+  <span class="hero-numeral" aria-hidden="true">01</span>
   <div class="wrap">
-    <div>
+    <div class="hero-copy">
       <span class="eyebrow" data-i18n="heroEyebrow">EPA Section 608 · HVAC certification</span>
       <h1 data-i18n-html="heroTitle">Pass your EPA&nbsp;608 <span>the first time.</span></h1>
       <p class="sub" data-i18n="heroSub">Find your weak spots before you study. Take a free 10-question diagnostic across Core and Types I–III, with an instant score and clear explanations.</p>
@@ -306,7 +385,8 @@
   </div>
 </section>
 
-<div class="stripe" aria-hidden="true"></div>
+<hr class="dashed-rule" aria-hidden="true">
+<div class="dashed-rule-tag"><span>FIG. 01 · BASELINE VITALS</span></div>
 
 <div class="stats">
   <div class="wrap">
@@ -317,7 +397,7 @@
   </div>
 </div>
 
-<section id="try" class="diagnostic">
+<section id="try" class="diagnostic paper">
   <div class="wrap">
     <div class="section-head">
       <span class="eyebrow" data-i18n="tryEyebrow">Free diagnostic</span>
@@ -369,9 +449,9 @@
       <p class="section-sub" data-i18n="methodSub">TradePass turns every wrong answer into the next drill, then proves you're ready in exam mode.</p>
     </div>
     <div class="method-grid">
-      <article class="method-step"><span class="step-no" data-i18n="method1Label">01 / DIAGNOSE</span><h3 data-i18n="method1Title">Find the gaps</h3><p data-i18n="method1Body">Start with a fast diagnostic across Core and Types I–III.</p></article>
-      <article class="method-step"><span class="step-no" data-i18n="method2Label">02 / DRILL</span><h3 data-i18n="method2Title">Drill the why</h3><p data-i18n="method2Body">Review missed concepts in plain language, not copied answer keys.</p></article>
-      <article class="method-step"><span class="step-no" data-i18n="method3Label">03 / SIMULATE</span><h3 data-i18n="method3Title">Simulate the exam</h3><p data-i18n="method3Body">Practice under exam-style conditions until every section clears the line.</p></article>
+      <article class="method-step scroll-in"><div class="step-photo" style="background-image:url('assets/method_01_diagnose.jpg')" aria-hidden="true"></div><div class="step-body"><span class="step-no" data-i18n="method1Label">01 / DIAGNOSE</span><h3 data-i18n="method1Title">Find the gaps</h3><p data-i18n="method1Body">Start with a fast diagnostic across Core and Types I–III.</p></div></article>
+      <article class="method-step scroll-in"><div class="step-photo" style="background-image:url('assets/method_02_drill.jpg')" aria-hidden="true"></div><div class="step-body"><span class="step-no" data-i18n="method2Label">02 / DRILL</span><h3 data-i18n="method2Title">Drill the why</h3><p data-i18n="method2Body">Review missed concepts in plain language, not copied answer keys.</p></div></article>
+      <article class="method-step scroll-in"><div class="step-photo" style="background-image:url('assets/method_03_simulate.jpg')" aria-hidden="true"></div><div class="step-body"><span class="step-no" data-i18n="method3Label">03 / SIMULATE</span><h3 data-i18n="method3Title">Simulate the exam</h3><p data-i18n="method3Body">Practice under exam-style conditions until every section clears the line.</p></div></article>
     </div>
   </div>
 </section>
@@ -381,20 +461,29 @@
     <span class="eyebrow" data-i18n="diffEyebrow">Why TradePass</span>
     <h2 data-i18n="diffTitle">Built for techs, not test companies.</h2>
     <div class="diff-grid">
-      <div class="diff-card">
-        <span class="code">WHY</span>
-        <h3 data-i18n="diff1Title">Explanations, not answer keys</h3>
-        <p data-i18n="diff1Body">Every question tells you why the right answer is right — in plain language, the way a good instructor would.</p>
+      <div class="diff-card scroll-in">
+        <div class="card-photo" style="background-image:url('assets/diff_01_highlighted_manual.jpg')" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="code">WHY</span>
+          <h3 data-i18n="diff1Title">Explanations, not answer keys</h3>
+          <p data-i18n="diff1Body">Every question tells you why the right answer is right — in plain language, the way a good instructor would.</p>
+        </div>
       </div>
-      <div class="diff-card">
-        <span class="code">ES</span>
-        <h3 data-i18n="diff2Title">Real Spanish</h3>
-        <p data-i18n="diff2Body">Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.</p>
+      <div class="diff-card scroll-in">
+        <div class="card-photo" style="background-image:url('assets/diff_02_bilingual_techs.jpg')" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="code">ES</span>
+          <h3 data-i18n="diff2Title">Real Spanish</h3>
+          <p data-i18n="diff2Body">Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.</p>
+        </div>
       </div>
-      <div class="diff-card">
-        <span class="code">OFF</span>
-        <h3 data-i18n="diff3Title">Made for the jobsite</h3>
-        <p data-i18n="diff3Body">Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.</p>
+      <div class="diff-card scroll-in">
+        <div class="card-photo" style="background-image:url('assets/diff_03_rooftop_offline.jpg')" aria-hidden="true"></div>
+        <div class="card-body">
+          <span class="code">OFF</span>
+          <h3 data-i18n="diff3Title">Made for the jobsite</h3>
+          <p data-i18n="diff3Body">Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -402,7 +491,7 @@
 
 <section class="guarantee">
   <div class="wrap">
-    <div class="guarantee-seal" aria-hidden="true"><div><strong data-i18n="sealPass">PASS</strong><span data-i18n="sealRefund">OR YOUR MONEY BACK</span></div></div>
+    <div class="guarantee-seal is-photo" aria-hidden="true"><div><strong data-i18n="sealPass">PASS</strong><span data-i18n="sealRefund">OR YOUR MONEY BACK</span></div></div>
     <div>
       <span class="eyebrow" style="color:var(--yellow)" data-i18n="guaranteeEyebrow">The launch commitment</span>
       <h2 data-i18n="guaranteeTitle">Pass your exam or get your money back.</h2>
@@ -426,6 +515,7 @@
         </div>
       </div>
       <div class="price-card">
+        <div class="price-product" aria-hidden="true"></div>
         <div class="price-head">
           <span class="price-label" data-i18n="priceLabel">WAITLIST PRICE</span>
           <div class="price">$19.99</div>
@@ -478,20 +568,20 @@
 const I18N = {
   en: {
     navTry:"Free diagnostic", navMethod:"How it works", navPrice:"Price", navCta:"Start free test",
-    heroEyebrow:"EPA Section 608 · HVAC certification",
+    heroEyebrow:"PLATE 01 · EPA SECTION 608 · HVAC CERTIFICATION",
     heroTitle:"Pass your EPA 608 <span>the first time.</span>",
-    heroSub:"Find your weak spots before you study. Take a free 10-question diagnostic across Core and Types I–III, with an instant score and clear explanations.",
-    heroCheck1:"Core + Type I, II & III", heroCheck2:"Real English + Spanish", heroCheck3:"Built to work offline",
+    heroSub:"Find your weak spots in about four minutes. A free 10-question diagnostic across Core and Types I–III — instant score, plain-language explanations.",
+    heroCheck1:"Core + Type I, II & III", heroCheck2:"Real English + Spanish", heroCheck3:"Offline in the truck or on the roof",
     ctaBuy:"Start the free 10-question test", ctaBuy2:"Start the free diagnostic",
-    ctaMicro:"Instant score · no signup · English or Spanish", passPlate:"Pass line. Train past it.",
+    ctaMicro:"Instant score in ~4 min · no signup · EN or ES", passPlate:"Pass line. Train past it.",
     statQuestions:"question diagnostic — free now", statSections:"exam sections covered", statLang:"every single question", statOffline:"works offline",
-    tryEyebrow:"Free diagnostic", tryTitle:"Ten questions. Your score in about four minutes.",
+    tryEyebrow:"PLATE 02 · FREE DIAGNOSTIC", tryTitle:"Ten questions. Your score in about four minutes.",
     trySub:"Answer across Core and Types I–III. Every question includes the explanation, whether you get it right or not.",
     quizNext:"Next question", quizResults:"See my score", scoreLabel:"YOUR SCORE", resultEyebrow:"Diagnostic complete",
     resultTitleStrong:"Strong baseline.", resultTitleBuilding:"Good start — now target the gaps.", resultTitleStart:"You found where to begin.",
     resultSummary:"Your lowest section is {area}. TradePass would turn those misses into your next drill.",
     leadTitle:"Save your score and lock in 30% off.", leadBody:"Join the TradePass launch list with your section breakdown attached. We’ll use it to shape the study plan—one launch email, no course spam.",
-    leadEmail:"you@email.com", leadCta:"Save my score + 30% off", leadNote:"No card. Your score stays on this screen.", restartTest:"Retake the diagnostic",
+    leadEmail:"you@email.com", leadCta:"Save my score + 30% off", leadNote:"No card. Cut along the dotted line — your score stays on this screen.", restartTest:"Retake the diagnostic",
     methodEyebrow:"Your study loop", methodTitle:"Know what to study next.",
     methodSub:"TradePass turns every wrong answer into the next drill, then proves you're ready in exam mode.",
     method1Label:"01 / DIAGNOSE", method1Title:"Find the gaps", method1Body:"Start with a fast diagnostic across Core and Types I–III.",
@@ -503,11 +593,11 @@ const I18N = {
     diff2Title:"Real Spanish",
     diff2Body:"Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.",
     diff3Title:"Made for the jobsite",
-    diff3Body:"Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.",
-    guaranteeEyebrow:"The launch commitment", guaranteeTitle:"Pass your exam or get your money back.",
+    diff3Body:"Fully offline. Ten-minute drills that target your weak areas. Study in the truck, on the roof, in the break room.",
+    guaranteeEyebrow:"PLATE 04 · THE LAUNCH COMMITMENT", guaranteeTitle:"Pass your exam or get your money back.",
     guaranteeBody:"Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.",
     guaranteeTerms:"Launch commitment · eligibility terms shown before purchase.",
-    priceEyebrow:"Pricing", priceTitle:"Pay once. Keep it forever.",
+    priceEyebrow:"Catalog · Item № 608-001", priceTitle:"Pay once. Keep it forever.",
     priceSub:"No subscription trap. Join now to reserve 30% off the launch price, then decide when the app is ready.",
     pricePoint1:"Join free — no card required.", pricePoint2:"Get one launch email with your discount.", pricePoint3:"Buy once only if TradePass fits.",
     priceLabel:"WAITLIST PRICE", priceOnce:"launch price · one-time purchase", priceNote:"No card today. Pay only when TradePass launches.",
@@ -535,20 +625,20 @@ const I18N = {
   },
   es: {
     navTry:"Diagnóstico gratis", navMethod:"Cómo funciona", navPrice:"Precio", navCta:"Empezar prueba gratis",
-    heroEyebrow:"EPA Sección 608 · Certificación HVAC",
+    heroEyebrow:"PLATE 01 · EPA SECCIÓN 608 · CERTIFICACIÓN HVAC",
     heroTitle:"Aprueba tu EPA 608 <span>a la primera.</span>",
-    heroSub:"Encuentra tus puntos débiles antes de estudiar. Haz un diagnóstico gratis de 10 preguntas de Core y Tipos I–III, con puntuación inmediata y explicaciones claras.",
-    heroCheck1:"Core + Tipo I, II y III", heroCheck2:"Inglés + español reales", heroCheck3:"Funciona sin internet",
+    heroSub:"Encuentra tus puntos débiles en unos cuatro minutos. Diagnóstico gratuito de 10 preguntas sobre Core y Tipos I–III — puntuación al instante, explicaciones claras.",
+    heroCheck1:"Core + Tipo I, II y III", heroCheck2:"Inglés + español reales", heroCheck3:"Sin conexión, en la troca o en el techo",
     ctaBuy:"Empezar la prueba gratis de 10 preguntas", ctaBuy2:"Empezar el diagnóstico gratis",
-    ctaMicro:"Puntuación inmediata · sin registro · inglés o español", passPlate:"Línea de aprobado. Supérala.",
+    ctaMicro:"Puntuación en ~4 min · sin registro · EN o ES", passPlate:"Línea de aprobado. Supérala.",
     statQuestions:"preguntas de diagnóstico — gratis ahora", statSections:"secciones del examen", statLang:"cada pregunta en ambos idiomas", statOffline:"funciona sin internet",
-    tryEyebrow:"Diagnóstico gratis", tryTitle:"Diez preguntas. Tu puntuación en unos cuatro minutos.",
+    tryEyebrow:"PLATE 02 · DIAGNÓSTICO GRATIS", tryTitle:"Diez preguntas. Tu puntuación en unos cuatro minutos.",
     trySub:"Responde sobre Core y Tipos I–III. Cada pregunta incluye la explicación, aciertes o no.",
     quizNext:"Siguiente pregunta", quizResults:"Ver mi puntuación", scoreLabel:"TU PUNTUACIÓN", resultEyebrow:"Diagnóstico terminado",
     resultTitleStrong:"Buena base.", resultTitleBuilding:"Buen comienzo — ahora ataca las fallas.", resultTitleStart:"Ya sabes por dónde empezar.",
     resultSummary:"Tu sección más débil es {area}. TradePass convertiría esos errores en tu próximo repaso.",
     leadTitle:"Guarda tu puntuación y asegura 30% de descuento.", leadBody:"Únete a la lista de lanzamiento con tu desglose por sección. Lo usaremos para mejorar el plan de estudio—un correo de lanzamiento, sin spam.",
-    leadEmail:"tu@correo.com", leadCta:"Guardar mi puntuación + 30%", leadNote:"Sin tarjeta. Tu puntuación queda en esta pantalla.", restartTest:"Repetir el diagnóstico",
+    leadEmail:"tu@correo.com", leadCta:"Guardar mi puntuación + 30%", leadNote:"Sin tarjeta. Corta por la línea punteada — tu puntuación queda en esta pantalla.", restartTest:"Repetir el diagnóstico",
     methodEyebrow:"Tu ciclo de estudio", methodTitle:"Siempre sabrás qué estudiar después.",
     methodSub:"TradePass convierte cada respuesta incorrecta en tu próximo repaso y luego demuestra que estás listo en modo examen.",
     method1Label:"01 / DIAGNÓSTICO", method1Title:"Encuentra tus fallas", method1Body:"Empieza con un diagnóstico rápido de Core y Tipos I–III.",
@@ -560,11 +650,11 @@ const I18N = {
     diff2Title:"Español de verdad",
     diff2Body:"Cada pregunta escrita en ambos idiomas por personas, no traducción automática. Cambia de idioma cuando quieras.",
     diff3Title:"Hecha para la obra",
-    diff3Body:"Funciona 100% sin internet. Sesiones de 10 minutos que atacan tus áreas débiles. Estudia en la troca o en el descanso.",
-    guaranteeEyebrow:"El compromiso de lanzamiento", guaranteeTitle:"Apruebas tu examen o te devolvemos tu dinero.",
+    diff3Body:"Totalmente sin conexión. Sesiones de diez minutos enfocadas en tus áreas débiles. Estudia en la troca, en el techo, en el break.",
+    guaranteeEyebrow:"PLATE 04 · EL COMPROMISO DE LANZAMIENTO", guaranteeTitle:"Apruebas tu examen o te devolvemos tu dinero.",
     guaranteeBody:"Termina el programa, presenta tu EPA 608, y si no apruebas, te reembolsamos. Así de simple.",
     guaranteeTerms:"Compromiso de lanzamiento · verás los requisitos antes de comprar.",
-    priceEyebrow:"Precio", priceTitle:"Pagas una vez. Es tuyo para siempre.",
+    priceEyebrow:"Catálogo · Artículo N.º 608-001", priceTitle:"Pagas una vez. Es tuyo para siempre.",
     priceSub:"Sin suscripción. Únete ahora para reservar 30% de descuento y decide cuando la app esté lista.",
     pricePoint1:"Únete gratis — no necesitas tarjeta.", pricePoint2:"Recibe un solo correo con tu descuento.", pricePoint3:"Compra una vez solo si TradePass te sirve.",
     priceLabel:"PRECIO DE LISTA", priceOnce:"precio de lanzamiento · pago único", priceNote:"Sin tarjeta hoy. Paga solo cuando TradePass salga.",
@@ -831,6 +921,77 @@ document.getElementById("waitlistForm").addEventListener("submit", async (e) => 
 });
 
 setLang(lang);
+
+/* ---------- v2 motion (contract-safe): scroll-in, count-up, slot-flip ---------- */
+(function(){
+  const reduce = matchMedia("(prefers-reduced-motion: reduce)").matches;
+  // scroll-in fade
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => { if (e.isIntersecting){ e.target.classList.add("on"); io.unobserve(e.target); }});
+  }, {threshold:.18, rootMargin:"-6% 0px"});
+  document.querySelectorAll(".scroll-in").forEach(el => io.observe(el));
+  // count-up
+  function ease(t){ return 1 - Math.pow(1-t, 3); }
+  function animateNumber(el, from, to, dur, suffix){
+    if (reduce){ el.textContent = to + suffix; return; }
+    const start = performance.now();
+    const tick = (now) => {
+      const p = Math.min(1, (now - start) / dur);
+      const v = Math.round(from + (to - from) * ease(p));
+      el.textContent = v + suffix;
+      if (p < 1) requestAnimationFrame(tick);
+    };
+    requestAnimationFrame(tick);
+  }
+  const countIO = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const el = e.target;
+      const raw = el.dataset.countValue || el.textContent.trim();
+      const m = raw.match(/^(\d+)(\D*)$/);
+      if (m){
+        el.dataset.countValue = raw;
+        animateNumber(el, 0, parseInt(m[1],10), 900, m[2]);
+      }
+      countIO.unobserve(el);
+    });
+  }, {threshold:.4, rootMargin:"-8% 0px"});
+  document.querySelectorAll(".stat b, .pass-plate strong").forEach(el => countIO.observe(el));
+  // slot-flip for quizCounter text mutations
+  const counter = document.getElementById("quizCounter");
+  if (counter){
+    counter.classList.add("slot");
+    let currentCell = document.createElement("span");
+    currentCell.className = "slot-cell";
+    currentCell.textContent = counter.textContent;
+    counter.textContent = "";
+    counter.appendChild(currentCell);
+    const flip = (next) => {
+      if (reduce || currentCell.textContent === next){
+        currentCell.textContent = next; return;
+      }
+      const nextCell = document.createElement("span");
+      nextCell.className = "slot-cell slot-in";
+      nextCell.textContent = next;
+      counter.appendChild(nextCell);
+      requestAnimationFrame(() => {
+        currentCell.classList.add("slot-out");
+        nextCell.classList.add("on");
+      });
+      setTimeout(() => {
+        currentCell.remove();
+        nextCell.classList.remove("slot-in","on");
+        currentCell = nextCell;
+      }, 220);
+    };
+    // MutationObserver would double-fire; instead patch textContent via property observer
+    Object.defineProperty(counter, "textContent", {
+      configurable:true,
+      get(){ return currentCell.textContent; },
+      set(v){ flip(String(v)); }
+    });
+  }
+})();
 </script>
 </body>
 </html>
