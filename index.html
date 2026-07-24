@@ -78,6 +78,8 @@
   .btn-primary{background:var(--yellow);color:var(--ink);box-shadow:0 9px 24px rgba(245,183,0,.18)}
   .btn-primary::after{content:"→";font-family:var(--mono)}
   .btn-primary:hover{transform:translateY(-2px);box-shadow:0 13px 30px rgba(245,183,0,.26)}
+  .btn-ghost{min-height:54px;padding:14px 18px;border:1px solid rgba(255,255,255,.28);background:transparent;color:#fff;font-size:14px}
+  .btn-ghost:hover{transform:translateY(-2px);border-color:rgba(255,255,255,.55);background:rgba(255,255,255,.06)}
   .microcopy{font-family:var(--mono);font-size:12px;color:rgba(255,255,255,.58);max-width:27ch}
 
   /* app preview: the signature element */
@@ -147,12 +149,25 @@
   .breakdown{display:grid;grid-template-columns:repeat(4,1fr);gap:8px;margin:26px 0}
   .breakdown-item{padding:12px;border:1px solid var(--steel-border);border-radius:8px;background:var(--paper)}
   .breakdown-item span{display:block;font-family:var(--mono);font-size:10px;color:var(--steel)}.breakdown-item b{font-family:var(--display);font-size:25px}
-  .lead-card{display:grid;grid-template-columns:1fr 1.15fr;gap:24px;align-items:center;padding:24px;border-radius:12px;background:var(--graphite);color:#fff}
+  .lead-card{display:grid;grid-template-columns:1fr 1.05fr;gap:28px;align-items:center;padding:26px;border-radius:12px;background:var(--graphite);color:#fff}
   .lead-card h4{font-family:var(--display);font-size:29px;line-height:1;margin-bottom:8px}.lead-card p{font-size:13px;color:rgba(255,255,255,.67)}
+  .lead-kicker{display:block;margin-bottom:9px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--yellow);text-transform:uppercase}
+  .plan-teaser{display:grid;grid-template-columns:auto 1fr;gap:7px 11px;margin-top:16px;padding:13px;border:1px dashed rgba(255,255,255,.25);border-radius:8px;background:rgba(255,255,255,.04)}
+  .plan-teaser span{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:rgba(255,255,255,.48)}
+  .plan-teaser b{font-size:12px;font-weight:500;color:#fff}
   .inline-form{display:grid;grid-template-columns:1fr auto;gap:9px}.inline-form input[type=email]{min-width:0;min-height:52px;padding:13px 14px;border:1.5px solid rgba(255,255,255,.22);border-radius:8px;background:#fff;color:var(--ink)}
   .inline-form .btn{min-height:52px;padding:13px 18px;border-radius:8px;font-size:14px}.form-note{grid-column:1/-1;font-family:var(--mono);font-size:9px;color:rgba(255,255,255,.5)}
   .form-success,.form-error{display:none;grid-column:1/-1;font-size:13px;font-weight:600}.form-success{color:#8AD8A9}.form-error{color:#FFAAA3}
   .restart-link{margin-top:18px;border:0;background:transparent;color:var(--blue);font-size:13px;text-decoration:underline;cursor:pointer}
+  .study-plan{margin-top:18px;border:1px solid var(--steel-border);border-radius:12px;background:#FCFCF8;overflow:hidden}
+  .study-plan-head{display:flex;align-items:center;justify-content:space-between;gap:18px;padding:17px 20px;border-bottom:1px solid var(--steel-border);background:var(--yellow-soft)}
+  .study-plan-head h4{font-family:var(--display);font-size:27px;line-height:1}.study-plan-head span{font-family:var(--mono);font-size:9px;letter-spacing:.1em;color:var(--steel)}
+  .study-plan ol{display:grid;grid-template-columns:1fr 1fr;list-style:none}
+  .study-plan li{display:grid;grid-template-columns:54px 1fr;gap:12px;min-height:82px;padding:17px 18px;border-bottom:1px solid var(--steel-border)}
+  .study-plan li:nth-child(odd){border-right:1px solid var(--steel-border)}
+  .study-plan li:last-child{grid-column:1/-1;border-bottom:0;border-right:0;background:var(--graphite);color:#fff}
+  .study-plan .day{font-family:var(--mono);font-size:10px;color:var(--steel)}.study-plan li:last-child .day{color:var(--yellow)}
+  .study-plan b{display:block;margin-bottom:3px;font-size:14px}.study-plan p{font-size:12px;color:var(--steel)}.study-plan li:last-child p{color:rgba(255,255,255,.67)}
 
   /* learning loop */
   .method{background:var(--graphite);color:#fff;overflow:hidden}
@@ -174,15 +189,14 @@
   .diff-card h3{font-family:var(--display);font-weight:600;font-size:27px;line-height:1.05;margin-bottom:8px}
   .diff-card p{font-size:15px;color:var(--steel)}
 
-  /* guarantee */
-  .guarantee{padding:0;background:var(--graphite);color:#fff}
-  .guarantee .wrap{display:grid;grid-template-columns:220px 1fr;gap:48px;align-items:center;padding-top:62px;padding-bottom:62px}
-  .guarantee-seal{display:grid;place-items:center;aspect-ratio:1;border:2px solid var(--yellow);border-radius:50%;box-shadow:inset 0 0 0 10px var(--graphite),inset 0 0 0 12px rgba(245,183,0,.35);text-align:center;transform:rotate(-5deg)}
-  .guarantee-seal strong{font-family:var(--display);font-size:54px;line-height:.8;color:var(--yellow)}
-  .guarantee-seal span{display:block;margin-top:8px;font-family:var(--mono);font-size:9px;letter-spacing:.12em;text-transform:uppercase}
-  .guarantee h2{color:#fff;margin-top:9px}
-  .guarantee p{color:rgba(255,255,255,.72);max-width:61ch}
-  .guarantee .terms-note{display:block;margin-top:13px;color:rgba(255,255,255,.44);font-family:var(--mono);font-size:10px}
+  /* clear next steps: no pre-launch guarantee language */
+  .commitment{padding:0;background:var(--graphite);color:#fff}
+  .commitment .wrap{display:grid;grid-template-columns:.9fr 1.25fr;gap:54px;align-items:center;padding-top:62px;padding-bottom:62px}
+  .commitment h2{color:#fff;margin-top:9px}.commitment p{color:rgba(255,255,255,.68);max-width:56ch}
+  .service-ticket{position:relative;border:1px solid rgba(255,255,255,.22);border-radius:10px;background:#F8F8F3;color:var(--ink);box-shadow:0 18px 45px rgba(0,0,0,.2);overflow:hidden;transform:rotate(1deg)}
+  .service-ticket::before{content:"FOUNDING ACCESS";display:block;padding:10px 17px;background:var(--yellow);font-family:var(--mono);font-size:10px;font-weight:600;letter-spacing:.12em}
+  .ticket-row{display:grid;grid-template-columns:105px 1fr;gap:15px;padding:14px 17px;border-bottom:1px dashed var(--steel-border)}
+  .ticket-row:last-child{border-bottom:0}.ticket-row span{font-family:var(--mono);font-size:9px;letter-spacing:.08em;color:var(--steel)}.ticket-row b{font-size:13px}
 
   /* pricing */
   .pricing-layout{display:grid;grid-template-columns:1fr 460px;gap:72px;align-items:center}
@@ -192,13 +206,16 @@
   .price-card{background:var(--card);border:1px solid var(--steel-border);border-radius:18px;overflow:hidden;box-shadow:0 22px 60px rgba(30,40,47,.10)}
   .price-head{position:relative;background:var(--yellow);color:var(--ink);padding:28px;text-align:center}
   .price-label{display:block;margin-bottom:5px;font-family:var(--mono);font-size:10px;letter-spacing:.12em}
-  .price-head .price{font-family:var(--display);font-size:62px;font-weight:700;line-height:1}
+  .price-head .price{display:flex;align-items:baseline;justify-content:center;gap:12px;font-family:var(--display);font-weight:700;line-height:1}
+  .price-head .price s{font-size:28px;color:rgba(24,28,31,.55);text-decoration-thickness:2px}.price-head .price strong{font-size:62px}
   .price-head .per{font-size:13px;font-weight:600}
   .price-body{padding:27px}
   .price-body ul{list-style:none;display:flex;flex-direction:column;gap:11px;margin-bottom:24px}
   .price-body li{padding-left:27px;position:relative;font-size:14px}
   .price-body li::before{content:"✓";position:absolute;left:0;color:var(--green);font-weight:700}
   .price-note{display:block;margin-top:12px;text-align:center;color:var(--steel);font-size:12px}
+  .price-form{display:grid;gap:9px;margin-top:19px}.price-form input[type=email]{width:100%;min-height:52px;padding:13px 14px;border:1.5px solid var(--steel-border);border-radius:8px;background:#fff;color:var(--ink)}
+  .price-form .form-note{color:var(--steel);text-align:center}.price-form .form-success{color:var(--green);text-align:center}.price-form .form-error{color:var(--red);text-align:center}
   .btn-block{width:100%}
 
   /* FAQ */
@@ -233,14 +250,15 @@
     .app-stage{min-height:510px}.phone{width:min(340px,94vw);transform:none}.pass-plate{right:2px;top:24px}.cylinder-stamp{left:0;bottom:28px}
     .stats .wrap{grid-template-columns:1fr 1fr;padding:0 18px}.stat{padding:18px 14px;border-bottom:1px solid var(--steel-border)}.stat:nth-child(2){border-right:1px solid var(--steel-border)}
     section{padding:68px 0}.method-grid,.diff-grid{grid-template-columns:1fr}.method-step{min-height:220px}.method-step h3{margin-top:36px}
-    .guarantee .wrap{grid-template-columns:120px 1fr;gap:24px;padding-top:48px;padding-bottom:48px}.guarantee-seal strong{font-size:34px}.guarantee h2{font-size:34px}
+    .commitment .wrap{grid-template-columns:1fr 1.1fr;gap:30px;padding-top:48px;padding-bottom:48px}.commitment h2{font-size:34px}
     .pricing-layout{grid-template-columns:1fr;gap:36px}.price-card{max-width:470px;width:100%;margin:auto}
     .quiz-panel,.result-panel{padding:28px 22px}.result-top{grid-template-columns:112px 1fr;gap:18px}.score-dial{width:112px}.score-dial strong{font-size:37px}.breakdown{grid-template-columns:1fr 1fr}.lead-card{grid-template-columns:1fr}.inline-form{grid-template-columns:1fr}
+    .study-plan ol{grid-template-columns:1fr}.study-plan li,.study-plan li:nth-child(odd){border-right:0}.study-plan li:last-child{grid-column:auto}
     footer .wrap{grid-template-columns:1fr}.mobile-cta{display:block}footer{padding-bottom:112px}
   }
   @media (max-width:480px){
     .pass-plate{width:112px;padding:11px}.pass-plate strong{font-size:31px}.cylinder-stamp{font-size:9px}
-    .phone-body{padding:17px}.phone-question{font-size:22px}.guarantee .wrap{grid-template-columns:1fr}.guarantee-seal{width:112px}.stats .wrap{grid-template-columns:1fr}.stat{border-right:1px solid var(--steel-border)}
+    .phone-body{padding:17px}.phone-question{font-size:22px}.commitment .wrap{grid-template-columns:1fr}.service-ticket{transform:none}.stats .wrap{grid-template-columns:1fr}.stat{border-right:1px solid var(--steel-border)}
     .result-top{grid-template-columns:1fr}.result-panel h3{font-size:33px}
   }
   @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}.btn,.choice{transition:none}}
@@ -270,16 +288,17 @@
   <div class="wrap">
     <div>
       <span class="eyebrow" data-i18n="heroEyebrow">EPA Section 608 · HVAC certification</span>
-      <h1 data-i18n-html="heroTitle">Pass your EPA&nbsp;608 <span>the first time.</span></h1>
-      <p class="sub" data-i18n="heroSub">Find your weak spots before you study. Take a free 10-question diagnostic across Core and Types I–III, with an instant score and clear explanations.</p>
+      <h1 data-i18n-html="heroTitle">Know if you’re ready for <span>EPA&nbsp;608.</span></h1>
+      <p class="sub" data-i18n="heroSub">Take a free 10-question readiness check across Core and Types I–III. See your score, your weakest section, and the exact 7-day study plan to follow next.</p>
       <div class="hero-checks" aria-label="Product highlights">
         <span data-i18n="heroCheck1">Core + Type I, II &amp; III</span>
         <span data-i18n="heroCheck2">Real English + Spanish</span>
-        <span data-i18n="heroCheck3">Built to work offline</span>
+        <span data-i18n="heroCheck3">Personal 7-day plan</span>
       </div>
       <div class="cta-row">
-        <button class="btn btn-primary" data-i18n="ctaBuy" onclick="startDiagnostic('hero')">Start the free 10-question test</button>
-        <span class="microcopy" data-i18n="ctaMicro">Instant score · no signup · English or Spanish</span>
+        <button class="btn btn-primary" data-i18n="ctaBuy" onclick="startDiagnostic('hero')">Check my EPA 608 readiness</button>
+        <button class="btn btn-ghost" type="button" data-i18n="heroSkip" onclick="reserveFounderPrice('hero_skip')">Skip the test — reserve 30% off</button>
+        <span class="microcopy" data-i18n="ctaMicro">4 minutes · instant score · no signup to start</span>
       </div>
     </div>
     <div class="app-stage" aria-label="TradePass practice question preview">
@@ -340,20 +359,37 @@
         </div>
         <div class="breakdown" id="breakdown"></div>
         <div class="lead-card">
-          <div><h4 data-i18n="leadTitle">Save your score and lock in 30% off.</h4><p data-i18n="leadBody">Join the TradePass launch list with your section breakdown attached. We’ll use it to shape the study plan—one launch email, no course spam.</p></div>
-          <form class="inline-form" id="waitlistForm" action="https://formspree.io/f/xlgqbpzr" method="POST">
+          <div>
+            <span class="lead-kicker" data-i18n="leadKicker">Your next move is ready</span>
+            <h4 data-i18n="leadTitle">Unlock your personalized 7-day study plan.</h4>
+            <p data-i18n="leadBody">Enter your email to open the plan on this screen and reserve the $13.99 founder price. No card and one launch email only.</p>
+            <div class="plan-teaser" aria-hidden="true">
+              <span data-i18n="planTeaser1Label">DAY 01</span><b id="planTeaserArea">Your weakest section</b>
+              <span data-i18n="planTeaser2Label">DAY 05</span><b data-i18n="planTeaser2">Mixed recovery drill</b>
+              <span data-i18n="planTeaser3Label">DAY 07</span><b data-i18n="planTeaser3">Timed readiness check</b>
+            </div>
+          </div>
+          <form class="inline-form waitlist-form" id="resultWaitlistForm" data-source="diagnostic_result" data-reveal-plan="true" action="https://formspree.io/f/xlgqbpzr" method="POST">
             <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
             <input type="email" name="email" required data-i18n-placeholder="leadEmail" placeholder="you@email.com" aria-label="Email">
-            <input type="hidden" name="lang" id="langField" value="en">
+            <input type="hidden" name="lang" value="en">
             <input type="hidden" name="source" id="sourceField" value="diagnostic_result">
             <input type="hidden" name="utm" id="utmField" value="">
             <input type="hidden" name="score" id="scoreField" value="">
             <input type="hidden" name="breakdown" id="breakdownField" value="">
-            <button class="btn btn-primary" type="submit" data-i18n="leadCta">Save my score + 30% off</button>
-            <span class="form-note" data-i18n="leadNote">No card. Your score stays on this screen.</span>
-            <span class="form-success" id="formSuccess" aria-live="polite" data-i18n="modalSuccess">Your plan is saved. Watch your inbox.</span>
-            <span class="form-error" id="formError" role="alert" data-i18n="modalError">We couldn't save your email. Please try again.</span>
+            <input type="hidden" name="landing" value="">
+            <button class="btn btn-primary" type="submit" data-i18n="leadCta">Open my 7-day plan</button>
+            <span class="form-note" data-i18n="leadNote">Free · no card · the plan opens here instantly</span>
+            <span class="form-success" aria-live="polite" data-i18n="resultSuccess">Plan unlocked. Your founder price is reserved.</span>
+            <span class="form-error" role="alert" data-i18n="modalError">We couldn't save your email. Please try again.</span>
           </form>
+        </div>
+        <div class="study-plan" id="studyPlan" hidden>
+          <div class="study-plan-head">
+            <h4 data-i18n="planTitle">Your 7-day readiness work order</h4>
+            <span data-i18n="planStatus">STATUS / UNLOCKED</span>
+          </div>
+          <ol id="studyPlanDays"></ol>
         </div>
         <button class="restart-link" type="button" onclick="restartDiagnostic()" data-i18n="restartTest">Retake the diagnostic</button>
       </div>
@@ -400,14 +436,17 @@
   </div>
 </section>
 
-<section class="guarantee">
+<section class="commitment">
   <div class="wrap">
-    <div class="guarantee-seal" aria-hidden="true"><div><strong data-i18n="sealPass">PASS</strong><span data-i18n="sealRefund">OR YOUR MONEY BACK</span></div></div>
     <div>
-      <span class="eyebrow" style="color:var(--yellow)" data-i18n="guaranteeEyebrow">The launch commitment</span>
-      <h2 data-i18n="guaranteeTitle">Pass your exam or get your money back.</h2>
-      <p data-i18n="guaranteeBody">Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.</p>
-      <span class="terms-note" data-i18n="guaranteeTerms">Launch commitment · eligibility terms shown before purchase.</span>
+      <span class="eyebrow" style="color:var(--yellow)" data-i18n="commitmentEyebrow">No pre-launch surprises</span>
+      <h2 data-i18n="commitmentTitle">Know exactly what happens next.</h2>
+      <p data-i18n="commitmentBody">Joining today opens your study plan and reserves founder pricing. It does not buy anything, start a trial, or create a subscription.</p>
+    </div>
+    <div class="service-ticket" aria-label="Founding access details">
+      <div class="ticket-row"><span data-i18n="ticketChargeLabel">CHARGE TODAY</span><b data-i18n="ticketChargeValue">$0 — no card requested</b></div>
+      <div class="ticket-row"><span data-i18n="ticketNowLabel">YOU GET NOW</span><b data-i18n="ticketNowValue">Your personalized 7-day study plan</b></div>
+      <div class="ticket-row"><span data-i18n="ticketLaterLabel">AT LAUNCH</span><b data-i18n="ticketLaterValue">One email + $13.99 founder price</b></div>
     </div>
   </div>
 </section>
@@ -417,8 +456,8 @@
     <div class="pricing-layout">
       <div>
         <span class="eyebrow" data-i18n="priceEyebrow">Pricing</span>
-        <h2 data-i18n="priceTitle">Pay once. Keep it forever.</h2>
-        <p class="section-sub" data-i18n="priceSub">No subscription trap. Join now to reserve 30% off the launch price, then decide when the app is ready.</p>
+        <h2 data-i18n="priceTitle">Reserve the founder price. Decide at launch.</h2>
+        <p class="section-sub" data-i18n="priceSub">The planned launch price is $19.99. Join the founding list now to reserve $13.99—30% off—then decide when the app is ready.</p>
         <div class="price-points">
           <div class="price-point"><b>01</b><span data-i18n="pricePoint1">Join free — no card required.</span></div>
           <div class="price-point"><b>02</b><span data-i18n="pricePoint2">Get one launch email with your discount.</span></div>
@@ -427,9 +466,9 @@
       </div>
       <div class="price-card">
         <div class="price-head">
-          <span class="price-label" data-i18n="priceLabel">WAITLIST PRICE</span>
-          <div class="price">$19.99</div>
-          <div class="per" data-i18n="priceOnce">launch price · one-time purchase</div>
+          <span class="price-label" data-i18n="priceLabel">FOUNDING LIST PRICE</span>
+          <div class="price"><s>$19.99</s><strong>$13.99</strong></div>
+          <div class="per" data-i18n="priceOnce">30% reserved · one-time purchase at launch</div>
         </div>
         <div class="price-body">
           <ul>
@@ -439,8 +478,20 @@
             <li data-i18n="feat4">Full English + Spanish</li>
             <li data-i18n="feat5">Works offline · free updates</li>
           </ul>
-          <button class="btn btn-primary btn-block" data-i18n="ctaBuy2" onclick="startDiagnostic('pricing')">Start the free diagnostic</button>
-          <span class="price-note" data-i18n="priceNote">No card today. Pay only when TradePass launches.</span>
+          <form class="price-form waitlist-form" id="priceWaitlistForm" data-source="pricing_direct" data-reveal-plan="false" action="https://formspree.io/f/xlgqbpzr" method="POST">
+            <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off" aria-hidden="true">
+            <input type="email" name="email" required data-i18n-placeholder="leadEmail" placeholder="you@email.com" aria-label="Founder price email">
+            <input type="hidden" name="lang" value="en">
+            <input type="hidden" name="source" value="pricing_direct">
+            <input type="hidden" name="utm" value="">
+            <input type="hidden" name="score" value="not_taken">
+            <input type="hidden" name="breakdown" value="not_taken">
+            <input type="hidden" name="landing" value="">
+            <button class="btn btn-primary btn-block" type="submit" data-i18n="priceCta">Reserve my $13.99 founder price</button>
+            <span class="form-note" data-i18n="priceNote">No card today. One email when TradePass launches.</span>
+            <span class="form-success" aria-live="polite" data-i18n="priceSuccess">Reserved. We’ll send one email when TradePass launches.</span>
+            <span class="form-error" role="alert" data-i18n="modalError">We couldn't save your email. Please try again.</span>
+          </form>
         </div>
       </div>
     </div>
@@ -477,21 +528,23 @@
 /* ---------- i18n ---------- */
 const I18N = {
   en: {
-    navTry:"Free diagnostic", navMethod:"How it works", navPrice:"Price", navCta:"Start free test",
+    navTry:"Free diagnostic", navMethod:"How it works", navPrice:"Founder price", navCta:"Check readiness",
     heroEyebrow:"EPA Section 608 · HVAC certification",
-    heroTitle:"Pass your EPA 608 <span>the first time.</span>",
-    heroSub:"Find your weak spots before you study. Take a free 10-question diagnostic across Core and Types I–III, with an instant score and clear explanations.",
-    heroCheck1:"Core + Type I, II & III", heroCheck2:"Real English + Spanish", heroCheck3:"Built to work offline",
-    ctaBuy:"Start the free 10-question test", ctaBuy2:"Start the free diagnostic",
-    ctaMicro:"Instant score · no signup · English or Spanish", passPlate:"Pass line. Train past it.",
+    heroTitle:"Know if you’re ready for <span>EPA 608.</span>",
+    heroSub:"Take a free 10-question readiness check across Core and Types I–III. See your score, your weakest section, and the exact 7-day study plan to follow next.",
+    heroCheck1:"Core + Type I, II & III", heroCheck2:"Real English + Spanish", heroCheck3:"Personal 7-day plan",
+    ctaBuy:"Check my EPA 608 readiness", ctaBuy2:"Start the free diagnostic", heroSkip:"Skip the test — reserve 30% off",
+    ctaMicro:"4 minutes · instant score · no signup to start", passPlate:"Pass line. Train past it.",
     statQuestions:"question diagnostic — free now", statSections:"exam sections covered", statLang:"every single question", statOffline:"works offline",
     tryEyebrow:"Free diagnostic", tryTitle:"Ten questions. Your score in about four minutes.",
     trySub:"Answer across Core and Types I–III. Every question includes the explanation, whether you get it right or not.",
     quizNext:"Next question", quizResults:"See my score", scoreLabel:"YOUR SCORE", resultEyebrow:"Diagnostic complete",
     resultTitleStrong:"Strong baseline.", resultTitleBuilding:"Good start — now target the gaps.", resultTitleStart:"You found where to begin.",
-    resultSummary:"Your lowest section is {area}. TradePass would turn those misses into your next drill.",
-    leadTitle:"Save your score and lock in 30% off.", leadBody:"Join the TradePass launch list with your section breakdown attached. We’ll use it to shape the study plan—one launch email, no course spam.",
-    leadEmail:"you@email.com", leadCta:"Save my score + 30% off", leadNote:"No card. Your score stays on this screen.", restartTest:"Retake the diagnostic",
+    resultSummary:"Your lowest section is {area}. That should be the first block in your study plan.",
+    leadKicker:"Your next move is ready", leadTitle:"Unlock your personalized 7-day study plan.", leadBody:"Enter your email to open the plan on this screen and reserve the $13.99 founder price. No card and one launch email only.",
+    planTeaser1Label:"DAY 01", planTeaser2Label:"DAY 05", planTeaser3Label:"DAY 07", planTeaser2:"Mixed recovery drill", planTeaser3:"Timed readiness check",
+    leadEmail:"you@email.com", leadCta:"Open my 7-day plan", leadNote:"Free · no card · the plan opens here instantly", restartTest:"Retake the diagnostic",
+    planTitle:"Your 7-day readiness work order", planStatus:"STATUS / UNLOCKED",
     methodEyebrow:"Your study loop", methodTitle:"Know what to study next.",
     methodSub:"TradePass turns every wrong answer into the next drill, then proves you're ready in exam mode.",
     method1Label:"01 / DIAGNOSE", method1Title:"Find the gaps", method1Body:"Start with a fast diagnostic across Core and Types I–III.",
@@ -504,13 +557,13 @@ const I18N = {
     diff2Body:"Every question written in both languages by people, not machine-translated. Switch anytime, even mid-quiz.",
     diff3Title:"Made for the jobsite",
     diff3Body:"Fully offline. Ten-minute drills that target your weak areas. Study in the truck, the break room, anywhere.",
-    guaranteeEyebrow:"The launch commitment", guaranteeTitle:"Pass your exam or get your money back.",
-    guaranteeBody:"Finish the program, take your EPA 608, and if you don't pass, we refund you. Simple as that.",
-    guaranteeTerms:"Launch commitment · eligibility terms shown before purchase.",
-    priceEyebrow:"Pricing", priceTitle:"Pay once. Keep it forever.",
-    priceSub:"No subscription trap. Join now to reserve 30% off the launch price, then decide when the app is ready.",
+    commitmentEyebrow:"No pre-launch surprises", commitmentTitle:"Know exactly what happens next.",
+    commitmentBody:"Joining today opens your study plan and reserves founder pricing. It does not buy anything, start a trial, or create a subscription.",
+    ticketChargeLabel:"CHARGE TODAY", ticketChargeValue:"$0 — no card requested", ticketNowLabel:"YOU GET NOW", ticketNowValue:"Your personalized 7-day study plan", ticketLaterLabel:"AT LAUNCH", ticketLaterValue:"One email + $13.99 founder price",
+    priceEyebrow:"Pricing", priceTitle:"Reserve the founder price. Decide at launch.",
+    priceSub:"The planned launch price is $19.99. Join the founding list now to reserve $13.99—30% off—then decide when the app is ready.",
     pricePoint1:"Join free — no card required.", pricePoint2:"Get one launch email with your discount.", pricePoint3:"Buy once only if TradePass fits.",
-    priceLabel:"WAITLIST PRICE", priceOnce:"launch price · one-time purchase", priceNote:"No card today. Pay only when TradePass launches.",
+    priceLabel:"FOUNDING LIST PRICE", priceOnce:"30% reserved · one-time purchase at launch", priceCta:"Reserve my $13.99 founder price", priceNote:"No card today. One email when TradePass launches.", priceSuccess:"Reserved. We’ll send one email when TradePass launches.",
     feat1:"500+ questions: Core, Type I, II & III", feat2:"Unlimited exam simulations",
     feat3:"Weak-area drills that adapt to you", feat4:"Full English + Spanish", feat5:"Works offline · free updates",
     faqTitle:"Straight answers",
@@ -519,36 +572,37 @@ const I18N = {
     faq2Q:"Which certification types does it cover?",
     faq2A:"Core plus Type I (small appliances), Type II (high pressure) and Type III (low pressure) — everything you need for Universal.",
     faq3Q:"When does it launch?",
-    faq3A:"Soon. Leave your email and you'll get 30% off the launch price — no spam, one email when it's live.",
+    faq3A:"The first release is being built now. Join the founding list to reserve the $13.99 price — one email when it is ready.",
     faq4Q:"Does the whole app really work in Spanish?",
     faq4A:"Yes — every question, every explanation, every screen. Written by people, not auto-translated.",
     faq5Q:"Does joining the waitlist charge me?",
     faq5A:"No. The waitlist is free and needs no card. You decide whether to buy when TradePass launches.",
-    sealPass:"PASS", sealRefund:"OR YOUR MONEY BACK",
     footerDisclaimer:"TradePass is independent study material and is not affiliated with or endorsed by the U.S. EPA or any exam provider.",
-    mobileCta:"Start the free test", modalKicker:"FREE WAITLIST",
+    mobileCta:"Check my readiness", modalKicker:"FREE WAITLIST",
     modalTitle:"Almost ready.",
     modalBody:"TradePass launches soon. Leave your email and lock in 30% off the launch price — one email when it's live, nothing else.",
-    modalEmail:"you@email.com", modalCta:"Lock in 30% off", modalSuccess:"Your score is saved. We’ll email you at launch.",
+    modalEmail:"you@email.com", modalCta:"Lock in 30% off", resultSuccess:"Plan unlocked. Your founder price is reserved.",
     modalError:"We couldn't save your email. Please try again.",
     whyLabel:"Why", correct:"Correct", incorrect:"Not quite"
   },
   es: {
-    navTry:"Diagnóstico gratis", navMethod:"Cómo funciona", navPrice:"Precio", navCta:"Empezar prueba gratis",
+    navTry:"Diagnóstico gratis", navMethod:"Cómo funciona", navPrice:"Precio fundador", navCta:"Comprobar preparación",
     heroEyebrow:"EPA Sección 608 · Certificación HVAC",
-    heroTitle:"Aprueba tu EPA 608 <span>a la primera.</span>",
-    heroSub:"Encuentra tus puntos débiles antes de estudiar. Haz un diagnóstico gratis de 10 preguntas de Core y Tipos I–III, con puntuación inmediata y explicaciones claras.",
-    heroCheck1:"Core + Tipo I, II y III", heroCheck2:"Inglés + español reales", heroCheck3:"Funciona sin internet",
-    ctaBuy:"Empezar la prueba gratis de 10 preguntas", ctaBuy2:"Empezar el diagnóstico gratis",
-    ctaMicro:"Puntuación inmediata · sin registro · inglés o español", passPlate:"Línea de aprobado. Supérala.",
+    heroTitle:"Descubre si estás listo para <span>EPA 608.</span>",
+    heroSub:"Haz una prueba gratis de 10 preguntas sobre Core y Tipos I–III. Ve tu puntuación, tu sección más débil y el plan exacto de 7 días que debes seguir.",
+    heroCheck1:"Core + Tipo I, II y III", heroCheck2:"Inglés + español reales", heroCheck3:"Plan personal de 7 días",
+    ctaBuy:"Comprobar mi preparación EPA 608", ctaBuy2:"Empezar el diagnóstico gratis", heroSkip:"Saltar la prueba — reservar 30%",
+    ctaMicro:"4 minutos · resultado inmediato · sin registro para empezar", passPlate:"Línea de aprobado. Supérala.",
     statQuestions:"preguntas de diagnóstico — gratis ahora", statSections:"secciones del examen", statLang:"cada pregunta en ambos idiomas", statOffline:"funciona sin internet",
     tryEyebrow:"Diagnóstico gratis", tryTitle:"Diez preguntas. Tu puntuación en unos cuatro minutos.",
     trySub:"Responde sobre Core y Tipos I–III. Cada pregunta incluye la explicación, aciertes o no.",
     quizNext:"Siguiente pregunta", quizResults:"Ver mi puntuación", scoreLabel:"TU PUNTUACIÓN", resultEyebrow:"Diagnóstico terminado",
     resultTitleStrong:"Buena base.", resultTitleBuilding:"Buen comienzo — ahora ataca las fallas.", resultTitleStart:"Ya sabes por dónde empezar.",
-    resultSummary:"Tu sección más débil es {area}. TradePass convertiría esos errores en tu próximo repaso.",
-    leadTitle:"Guarda tu puntuación y asegura 30% de descuento.", leadBody:"Únete a la lista de lanzamiento con tu desglose por sección. Lo usaremos para mejorar el plan de estudio—un correo de lanzamiento, sin spam.",
-    leadEmail:"tu@correo.com", leadCta:"Guardar mi puntuación + 30%", leadNote:"Sin tarjeta. Tu puntuación queda en esta pantalla.", restartTest:"Repetir el diagnóstico",
+    resultSummary:"Tu sección más débil es {area}. Ese debe ser el primer bloque de tu plan de estudio.",
+    leadKicker:"Tu próximo paso está listo", leadTitle:"Desbloquea tu plan personal de estudio de 7 días.", leadBody:"Escribe tu correo para abrir el plan en esta pantalla y reservar el precio fundador de $13.99. Sin tarjeta y un solo correo al lanzamiento.",
+    planTeaser1Label:"DÍA 01", planTeaser2Label:"DÍA 05", planTeaser3Label:"DÍA 07", planTeaser2:"Repaso mixto de recuperación", planTeaser3:"Prueba cronometrada",
+    leadEmail:"tu@correo.com", leadCta:"Abrir mi plan de 7 días", leadNote:"Gratis · sin tarjeta · el plan se abre aquí", restartTest:"Repetir el diagnóstico",
+    planTitle:"Tu orden de trabajo de 7 días", planStatus:"ESTADO / DESBLOQUEADO",
     methodEyebrow:"Tu ciclo de estudio", methodTitle:"Siempre sabrás qué estudiar después.",
     methodSub:"TradePass convierte cada respuesta incorrecta en tu próximo repaso y luego demuestra que estás listo en modo examen.",
     method1Label:"01 / DIAGNÓSTICO", method1Title:"Encuentra tus fallas", method1Body:"Empieza con un diagnóstico rápido de Core y Tipos I–III.",
@@ -561,13 +615,13 @@ const I18N = {
     diff2Body:"Cada pregunta escrita en ambos idiomas por personas, no traducción automática. Cambia de idioma cuando quieras.",
     diff3Title:"Hecha para la obra",
     diff3Body:"Funciona 100% sin internet. Sesiones de 10 minutos que atacan tus áreas débiles. Estudia en la troca o en el descanso.",
-    guaranteeEyebrow:"El compromiso de lanzamiento", guaranteeTitle:"Apruebas tu examen o te devolvemos tu dinero.",
-    guaranteeBody:"Termina el programa, presenta tu EPA 608, y si no apruebas, te reembolsamos. Así de simple.",
-    guaranteeTerms:"Compromiso de lanzamiento · verás los requisitos antes de comprar.",
-    priceEyebrow:"Precio", priceTitle:"Pagas una vez. Es tuyo para siempre.",
-    priceSub:"Sin suscripción. Únete ahora para reservar 30% de descuento y decide cuando la app esté lista.",
+    commitmentEyebrow:"Sin sorpresas antes del lanzamiento", commitmentTitle:"Sabrás exactamente qué pasa después.",
+    commitmentBody:"Unirte hoy abre tu plan de estudio y reserva el precio fundador. No compras nada, no empiezas una prueba y no creas una suscripción.",
+    ticketChargeLabel:"COBRO HOY", ticketChargeValue:"$0 — sin tarjeta", ticketNowLabel:"RECIBES AHORA", ticketNowValue:"Tu plan personal de estudio de 7 días", ticketLaterLabel:"AL LANZAMIENTO", ticketLaterValue:"Un correo + precio fundador de $13.99",
+    priceEyebrow:"Precio", priceTitle:"Reserva el precio fundador. Decide al lanzamiento.",
+    priceSub:"El precio previsto de lanzamiento es $19.99. Únete ahora para reservar $13.99—30% menos—y decide cuando la app esté lista.",
     pricePoint1:"Únete gratis — no necesitas tarjeta.", pricePoint2:"Recibe un solo correo con tu descuento.", pricePoint3:"Compra una vez solo si TradePass te sirve.",
-    priceLabel:"PRECIO DE LISTA", priceOnce:"precio de lanzamiento · pago único", priceNote:"Sin tarjeta hoy. Paga solo cuando TradePass salga.",
+    priceLabel:"PRECIO FUNDADOR", priceOnce:"30% reservado · pago único al lanzamiento", priceCta:"Reservar mi precio de $13.99", priceNote:"Sin tarjeta hoy. Un correo cuando TradePass salga.", priceSuccess:"Reservado. Te enviaremos un correo cuando TradePass salga.",
     feat1:"Más de 500 preguntas: Core, Tipo I, II y III", feat2:"Simulacros de examen ilimitados",
     feat3:"Repasos que se adaptan a tus áreas débiles", feat4:"Inglés y español completos", feat5:"Sin internet · actualizaciones gratis",
     faqTitle:"Respuestas directas",
@@ -576,17 +630,16 @@ const I18N = {
     faq2Q:"¿Qué tipos de certificación cubre?",
     faq2A:"Core más Tipo I (electrodomésticos pequeños), Tipo II (alta presión) y Tipo III (baja presión) — todo lo que necesitas para la Universal.",
     faq3Q:"¿Cuándo sale?",
-    faq3A:"Pronto. Deja tu correo y obtén 30% de descuento al lanzamiento — sin spam, un solo correo cuando esté lista.",
+    faq3A:"La primera versión está en desarrollo. Únete a la lista fundadora para reservar el precio de $13.99 — un correo cuando esté lista.",
     faq4Q:"¿De verdad toda la app funciona en español?",
     faq4A:"Sí — cada pregunta, cada explicación, cada pantalla. Escrito por personas, no traducción automática.",
     faq5Q:"¿Unirme a la lista me cobra algo?",
     faq5A:"No. La lista es gratis y no necesita tarjeta. Tú decides si compras cuando TradePass salga.",
-    sealPass:"APRUEBA", sealRefund:"O TE DEVOLVEMOS TU DINERO",
     footerDisclaimer:"TradePass es material de estudio independiente y no está afiliado ni avalado por la EPA de EE. UU. ni por ningún proveedor de exámenes.",
-    mobileCta:"Empezar la prueba gratis", modalKicker:"LISTA GRATUITA",
+    mobileCta:"Comprobar mi preparación", modalKicker:"LISTA GRATUITA",
     modalTitle:"Ya casi está lista.",
     modalBody:"TradePass sale pronto. Deja tu correo y asegura 30% de descuento al lanzamiento — un solo correo cuando esté lista, nada más.",
-    modalEmail:"tu@correo.com", modalCta:"Asegurar mi 30% de descuento", modalSuccess:"Tu puntuación está guardada. Te escribiremos al lanzamiento.",
+    modalEmail:"tu@correo.com", modalCta:"Asegurar mi 30% de descuento", resultSuccess:"Plan desbloqueado. Tu precio fundador está reservado.",
     modalError:"No pudimos guardar tu correo. Inténtalo de nuevo.",
     whyLabel:"Por qué", correct:"Correcto", incorrect:"No exactamente"
   }
@@ -651,6 +704,7 @@ let diagnosticAnswers = [];
 let diagnosticStarted = false;
 let diagnosticCompleted = false;
 let diagnosticSource = "organic";
+let latestWeakestArea = "core";
 
 function setLang(l){
   lang = l;
@@ -661,7 +715,7 @@ function setLang(l){
   document.querySelectorAll("[data-i18n]").forEach(el => { const k = el.dataset.i18n; if (I18N[l][k]) el.textContent = I18N[l][k]; });
   document.querySelectorAll("[data-i18n-html]").forEach(el => { const k = el.dataset.i18nHtml; if (I18N[l][k]) el.innerHTML = I18N[l][k]; });
   document.querySelectorAll("[data-i18n-placeholder]").forEach(el => { const k = el.dataset.i18nPlaceholder; if (I18N[l][k]) el.placeholder = I18N[l][k]; });
-  document.getElementById("langField").value = l;
+  document.querySelectorAll('input[name="lang"]').forEach(input => { input.value = l; });
   renderHeroPreview();
   if (document.getElementById("resultPanel").hidden) renderDiagnosticQuestion();
   else renderDiagnosticResult(false);
@@ -681,12 +735,19 @@ function renderHeroPreview(){
 function startDiagnostic(source){
   diagnosticSource = source || diagnosticSource;
   document.getElementById("sourceField").value = `diagnostic_result:${diagnosticSource}`;
-  document.getElementById("utmField").value = Object.values(UTM).filter(Boolean).join("/");
+  document.getElementById("utmField").value = attributionString();
   if (!diagnosticStarted) {
     diagnosticStarted = true;
     track("diagnostic_start", {source: diagnosticSource});
   }
   document.getElementById("try").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
+}
+
+function reserveFounderPrice(source){
+  const form = document.getElementById("priceWaitlistForm");
+  form.querySelector('input[name="source"]').value = `pricing_direct:${source}`;
+  track("founder_price_cta", {source});
+  document.getElementById("pricing").scrollIntoView({behavior: matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth", block:"start"});
 }
 
 function renderDiagnosticQuestion(){
@@ -762,22 +823,59 @@ function diagnosticBreakdown(){
   });
 }
 
+function areaName(area){
+  const names = {
+    core:"Core",
+    type1:lang === "es" ? "Tipo I" : "Type I",
+    type2:lang === "es" ? "Tipo II" : "Type II",
+    type3:lang === "es" ? "Tipo III" : "Type III"
+  };
+  return names[area];
+}
+
+function renderStudyPlan(){
+  const focus = areaName(latestWeakestArea);
+  const days = lang === "es" ? [
+    {title:`Fundamentos de ${focus}`,body:"Repasa las reglas, términos y números que fallaste hoy."},
+    {title:`Preguntas de ${focus}`,body:"Haz 15 preguntas lentas y explica en voz alta cada respuesta."},
+    {title:"Segunda sección más débil",body:"Repasa conceptos antes de intentar otro bloque de preguntas."},
+    {title:"Seguridad y recuperación",body:"Practica cilindros, evacuación, recuperación y prevención de fugas."},
+    {title:"Repaso mixto",body:"Alterna Core y Tipos I–III para practicar el cambio de contexto."},
+    {title:"Simulacro cronometrado",body:"Responde sin apuntes y marca cada duda para revisarla después."},
+    {title:"Comprobación final",body:`Repite primero ${focus}; no pares hasta superar tu puntuación de hoy.`}
+  ] : [
+    {title:`${focus} fundamentals`,body:"Review the rules, terms, and numbers behind the questions you missed today."},
+    {title:`${focus} question block`,body:"Work 15 questions slowly and explain every answer out loud."},
+    {title:"Second-weakest section",body:"Review concepts before attempting another question block."},
+    {title:"Safety and recovery",body:"Drill cylinders, evacuation, recovery, and leak-prevention rules."},
+    {title:"Mixed-section drill",body:"Alternate Core and Types I–III to practice switching context."},
+    {title:"Timed simulation",body:"Answer without notes and flag every uncertain response for review."},
+    {title:"Final readiness check",body:`Retest ${focus} first; keep going until you beat today’s score.`}
+  ];
+  document.getElementById("studyPlanDays").innerHTML = days.map((item,index) => `
+    <li><span class="day">${lang === "es" ? "DÍA" : "DAY"} ${String(index + 1).padStart(2,"0")}</span><div><b>${item.title}</b><p>${item.body}</p></div></li>
+  `).join("");
+}
+
 function renderDiagnosticResult(shouldTrack){
   const score = diagnosticAnswers.filter(answer => answer?.correct).length;
   const breakdown = diagnosticBreakdown();
   const weakest = [...breakdown].sort((a,b) => a.ratio - b.ratio)[0];
-  const areaNames = {core:"Core",type1:lang === "es" ? "Tipo I" : "Type I",type2:lang === "es" ? "Tipo II" : "Type II",type3:lang === "es" ? "Tipo III" : "Type III"};
+  latestWeakestArea = weakest.area;
   document.getElementById("quizPanel").hidden = true;
   document.getElementById("resultPanel").hidden = false;
   document.getElementById("resultScore").textContent = `${score}/${DIAGNOSTIC_QUESTIONS.length}`;
   document.getElementById("resultTitle").textContent = score >= 8 ? I18N[lang].resultTitleStrong : score >= 5 ? I18N[lang].resultTitleBuilding : I18N[lang].resultTitleStart;
-  document.getElementById("resultSummary").textContent = I18N[lang].resultSummary.replace("{area}", areaNames[weakest.area]);
-  document.getElementById("breakdown").innerHTML = breakdown.map(item => `<div class="breakdown-item"><span>${areaNames[item.area]}</span><b>${item.correct}/${item.total}</b></div>`).join("");
+  document.getElementById("resultSummary").textContent = I18N[lang].resultSummary.replace("{area}", areaName(weakest.area));
+  document.getElementById("breakdown").innerHTML = breakdown.map(item => `<div class="breakdown-item"><span>${areaName(item.area)}</span><b>${item.correct}/${item.total}</b></div>`).join("");
+  document.getElementById("planTeaserArea").textContent = areaName(weakest.area);
   document.getElementById("scoreField").value = `${score}/${DIAGNOSTIC_QUESTIONS.length}`;
   document.getElementById("breakdownField").value = breakdown.map(item => `${item.area}:${item.correct}/${item.total}`).join(", ");
+  if (!document.getElementById("studyPlan").hidden) renderStudyPlan();
   if (shouldTrack && !diagnosticCompleted) {
     diagnosticCompleted = true;
     track("diagnostic_complete", {score, weakest_area:weakest.area});
+    track("lead_form_view", {source:"diagnostic_result", score});
   }
 }
 
@@ -787,47 +885,69 @@ function restartDiagnostic(){
   diagnosticCompleted = false;
   document.getElementById("resultPanel").hidden = true;
   document.getElementById("quizPanel").hidden = false;
+  document.getElementById("studyPlan").hidden = true;
   renderDiagnosticQuestion();
   document.getElementById("try").scrollIntoView({behavior:"smooth",block:"start"});
 }
 
 /* ---------- waitlist funnel ---------- */
-const UTM = Object.fromEntries(["utm_source","utm_medium","utm_campaign"].map(k => [k, new URLSearchParams(location.search).get(k) || ""]));
+const ATTRIBUTION_KEYS = ["utm_source","utm_medium","utm_campaign","utm_content","utm_term","gclid","gbraid","wbraid"];
+const UTM = Object.fromEntries(ATTRIBUTION_KEYS.map(k => [k, new URLSearchParams(location.search).get(k) || ""]));
+const localPreview = ["localhost","127.0.0.1"].includes(location.hostname);
+function attributionString(){
+  return Object.entries(UTM).filter(([,value]) => value).map(([key,value]) => `${key}=${value}`).join(" | ");
+}
 function track(event, props){
   props = {...props, ...UTM, lang};
-  const log = JSON.parse(localStorage.getItem("tp_events") || "[]");
-  log.push({event, props, t: Date.now()});
-  localStorage.setItem("tp_events", JSON.stringify(log));
+  try {
+    const log = JSON.parse(localStorage.getItem("tp_events") || "[]");
+    log.push({event, props, t: Date.now()});
+    localStorage.setItem("tp_events", JSON.stringify(log.slice(-100)));
+  } catch {}
   if (window.plausible) window.plausible(event, {props});     // hook up Plausible before running ads
   if (window.gtag) window.gtag("event", event, props);        // or GA4
 }
-document.getElementById("waitlistForm").addEventListener("submit", async (e) => {
-  e.preventDefault();
-  const form = e.target;
-  const submitButton = form.querySelector("button[type=submit]");
-  const successMessage = document.getElementById("formSuccess");
-  const errorMessage = document.getElementById("formError");
-  submitButton.disabled = true;
-  successMessage.style.display = "none";
-  errorMessage.style.display = "none";
-  try {
-    if (!form.action.includes("YOUR_FORM_ID")) {
-      const response = await fetch(form.action, {method:"POST", body:new FormData(form), headers:{Accept:"application/json"}});
-      if (!response.ok) throw new Error("Waitlist submission failed");
-    } else {
-      const emails = JSON.parse(localStorage.getItem("tp_waitlist") || "[]");
-      emails.push({email: form.email.value, lang, t: Date.now()});
-      localStorage.setItem("tp_waitlist", JSON.stringify(emails));
-    }
-    track("waitlist_submit", {source: document.getElementById("sourceField").value, score:document.getElementById("scoreField").value});
-    successMessage.style.display = "block";
-    form.querySelector("input[type=email]").disabled = true;
+
+document.querySelectorAll(".waitlist-form").forEach(form => {
+  form.querySelector('input[name="lang"]').value = lang;
+  form.querySelector('input[name="utm"]').value = attributionString();
+  form.querySelector('input[name="landing"]').value = `${location.pathname}${location.search} | referrer=${document.referrer || "direct"}`;
+  const emailInput = form.querySelector('input[type="email"]');
+  emailInput.addEventListener("focus", () => {
+    if (form.dataset.started) return;
+    form.dataset.started = "true";
+    track("lead_form_start", {source:form.querySelector('input[name="source"]').value});
+  });
+  form.addEventListener("submit", async (e) => {
+    e.preventDefault();
+    const submitButton = form.querySelector('button[type="submit"]');
+    const successMessage = form.querySelector(".form-success");
+    const errorMessage = form.querySelector(".form-error");
     submitButton.disabled = true;
-    submitButton.style.display = "none";
-  } catch {
-    errorMessage.style.display = "block";
-    submitButton.disabled = false;
-  }
+    successMessage.style.display = "none";
+    errorMessage.style.display = "none";
+    try {
+      if (!localPreview) {
+        const response = await fetch(form.action, {method:"POST", body:new FormData(form), headers:{Accept:"application/json"}});
+        if (!response.ok) throw new Error("Waitlist submission failed");
+      }
+      const source = form.querySelector('input[name="source"]').value;
+      const score = form.querySelector('input[name="score"]').value;
+      track("waitlist_submit", {source, score});
+      successMessage.style.display = "block";
+      emailInput.disabled = true;
+      emailInput.style.display = "none";
+      submitButton.style.display = "none";
+      if (form.dataset.revealPlan === "true") {
+        renderStudyPlan();
+        document.getElementById("studyPlan").hidden = false;
+        track("study_plan_unlock", {weakest_area:latestWeakestArea, score});
+      }
+    } catch {
+      errorMessage.style.display = "block";
+      submitButton.disabled = false;
+    }
+  });
 });
 
 setLang(lang);
